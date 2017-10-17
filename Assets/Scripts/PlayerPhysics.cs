@@ -15,12 +15,15 @@ public class PlayerPhysics : MonoBehaviour {
     private GameObject[] _dotLine;
     private Transform _transform;
     private Vector3 _direction;
-    private Rigidbody _rigidbody;
     private Vector3 _mouseDownPos;
-    
+    private Rigidbody _rigidbody;
+    private bool flying = false;
 
-	// Use this for initialization
-	void Start () {
+    private Vector3 forceIntensity;
+
+
+    // Use this for initialization
+    void Start () {
 
         //assign transfrom variable to gameobject transform value and initialsie array
         _transform = transform;
@@ -46,21 +49,28 @@ public class PlayerPhysics : MonoBehaviour {
 
         float forceInX;
         float forceInY;
-        
+
+        if (flying)
+            Glide();
 
         if (Input.GetMouseButton(0))
         {
-            _mouseDownPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _mouseDownPos.z = 0;
-            _direction = (_mouseDownPos - Input.mousePosition).normalized ;
+         
+            Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
+            characterPosition.z = 0;
 
-            forceInX = (_mouseDownPos.x - Input.mousePosition.x);
-            forceInY = (_mouseDownPos.y - Input.mousePosition.y);
+            _direction = (characterPosition - Input.mousePosition).normalized ;
+
+            forceInX = (characterPosition.x - Input.mousePosition.x);
+            forceInY = (characterPosition.y - Input.mousePosition.y);
+
+            
 
             //Drag distance calculation a^2 = b^2 + c^2
-            _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 100;
+            _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
 
-            Debug.Log(string.Format("Direction value: {0}, Force Value: {1}", _direction, _forceValue));
+           // Debug.Log(string.Format("Direction value: {0}, Force Value: {1}, ForceInX: {2}, ForceInY: {3}  --- Mouse Down Pos: {4}, Mouse Pos: {5} ", _direction, _forceValue, forceInX, forceInY, _mouseDownPos, Input.mousePosition));
+           
 
             Aim();
         }
@@ -74,6 +84,9 @@ public class PlayerPhysics : MonoBehaviour {
            {
                _dotLine[i].SetActive(false);
            }
+
+            flying = true;
+            
         }
 
     }
@@ -92,5 +105,18 @@ public class PlayerPhysics : MonoBehaviour {
 
             _dotLine[i].SetActive(true);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        _rigidbody.AddForce(forceIntensity);
+        Debug.Log(forceIntensity.x);
+        forceIntensity.x = 0;
+    }
+
+    private void Glide()
+    {
+        forceIntensity = new Vector3(8, 0, 0);
+        forceIntensity *= Input.GetAxis("Horizontal");
     }
 }
