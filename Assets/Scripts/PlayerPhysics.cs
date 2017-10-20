@@ -12,7 +12,7 @@ public class PlayerPhysics : MonoBehaviour {
 
     //[SerializeField]
 
-    private float _forceValue;
+    public float _forceValue;
 
     private GameObject[] _dotLine;
     private Transform _transform;
@@ -74,8 +74,6 @@ public class PlayerPhysics : MonoBehaviour {
 
             //Drag distance calculation a^2 = b^2 + c^2
             _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
-
-            Debug.Log("Glide Bar Value" + _glideValue);
            
             Aim();
         }
@@ -133,8 +131,7 @@ public class PlayerPhysics : MonoBehaviour {
                 _canGlide = false;
         }
 
-        Debug.Log("Force Intensity" + _glideForceIntensity.x);
     }
 
-   
+  
 }

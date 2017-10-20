@@ -6,21 +6,26 @@ public class O : MonoBehaviour {
 
     
 
-    private GameObject structure;
-
     [SerializeField]
+
     private int objectHealth = 20;
     private int pointsGiven;
 
-    
+    private PlayerPhysics plyr;
 
+    GameObject thePlayer = GameObject.Find("Player");
+  
 	// Use this for initialization
 	void Start () {
-		
-	}
+        thePlayer = GameObject.Find("Player");
+        plyr = thePlayer.GetComponent<PlayerPhysics>();
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void onCollisionEnter(Collision collision) {
+
+        if (collision.gameObject.tag == "Player")
+            TakeDamage((int) plyr._forceValue);
 		
 	}
 
@@ -37,6 +42,6 @@ public class O : MonoBehaviour {
 
     void Die()
     {
-        structure.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
