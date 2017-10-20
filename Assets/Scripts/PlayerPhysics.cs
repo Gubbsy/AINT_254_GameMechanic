@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour {
+
+    public Slider glideBar;
 
     [SerializeField]
     private GameObject _dot;
@@ -10,16 +13,16 @@ public class PlayerPhysics : MonoBehaviour {
     //[SerializeField]
 
     private float _forceValue;
-    private Vector3 _force;
 
     private GameObject[] _dotLine;
     private Transform _transform;
     private Vector3 _direction;
-    private Vector3 _mouseDownPos;
     private Rigidbody _rigidbody;
-    private bool flying = false;
 
-    private Vector3 forceIntensity;
+    private bool _canGlide = false;
+    private float _glideValue;
+
+    private Vector3 _glideForceIntensity;
 
 
     // Use this for initialization
@@ -30,6 +33,10 @@ public class PlayerPhysics : MonoBehaviour {
         _rigidbody = GetComponent<Rigidbody>();
 
         _dotLine = new GameObject[10];
+        _glideValue = 40;
+
+        glideBar.value = _glideValue;
+       
 
 
         //Fill array with dot gameObjects and set them to false
@@ -45,12 +52,13 @@ public class PlayerPhysics : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //On mouse click calcualte direction of projectile using character position and mouse postion. 
-
+        
         float forceInX;
         float forceInY;
 
-        if (flying)
+        glideBar.value = _glideValue;
+
+        if (_canGlide)
             Glide();
 
         if (Input.GetMouseButton(0))
@@ -64,14 +72,11 @@ public class PlayerPhysics : MonoBehaviour {
             forceInX = (characterPosition.x - Input.mousePosition.x);
             forceInY = (characterPosition.y - Input.mousePosition.y);
 
-            
-
             //Drag distance calculation a^2 = b^2 + c^2
             _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
 
-           // Debug.Log(string.Format("Direction value: {0}, Force Value: {1}, ForceInX: {2}, ForceInY: {3}  --- Mouse Down Pos: {4}, Mouse Pos: {5} ", _direction, _forceValue, forceInX, forceInY, _mouseDownPos, Input.mousePosition));
+            Debug.Log("Glide Bar Value" + _glideValue);
            
-
             Aim();
         }
 
@@ -85,9 +90,11 @@ public class PlayerPhysics : MonoBehaviour {
                _dotLine[i].SetActive(false);
            }
 
-            flying = true;
+            _canGlide = true;
             
         }
+
+       
 
     }
 
@@ -109,14 +116,25 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        _rigidbody.AddForce(forceIntensity);
-        Debug.Log(forceIntensity.x);
-        forceIntensity.x = 0;
+        _rigidbody.AddForce(_glideForceIntensity);
+        _glideForceIntensity.x = 0;
     }
 
     private void Glide()
     {
-        forceIntensity = new Vector3(8, 0, 0);
-        forceIntensity *= Input.GetAxis("Horizontal");
+        _glideForceIntensity = new Vector3(_glideValue, 0, 0);
+        _glideForceIntensity *= Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            _glideValue -= 0.5f;
+
+            if (_glideValue == 0)
+                _canGlide = false;
+        }
+
+        Debug.Log("Force Intensity" + _glideForceIntensity.x);
     }
+
+   
 }
