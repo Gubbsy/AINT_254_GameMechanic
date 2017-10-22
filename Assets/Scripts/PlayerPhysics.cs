@@ -49,9 +49,8 @@ public class PlayerPhysics : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
 
+	void Update () {
         
         float forceInX;
         float forceInY;
@@ -91,9 +90,6 @@ public class PlayerPhysics : MonoBehaviour {
             _canGlide = true;
             
         }
-
-       
-
     }
 
     private void Aim()
@@ -133,5 +129,20 @@ public class PlayerPhysics : MonoBehaviour {
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        float contactVelocity;
   
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            contactVelocity = _rigidbody.velocity.magnitude;
+        
+
+            collision.gameObject.SendMessage("TakeDamage", contactVelocity);
+
+        }
+            
+            
+    }
+
 }

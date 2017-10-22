@@ -1,23 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class _GameManager : MonoBehaviour {
 
+    //public Slider glideBar;
+    private float _glideValue;
+
     private int points;
+    public Text pointText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
+	void Start () {
+        points = 0;
+       //_glideValue = 40;
+       // glideBar.value = _glideValue;
+    }
+	
+	
 	void Update () {
-		
-	}
+        pointText.text = points.ToString();
+       // glideBar.value = _glideValue;
+    }
 
-    public void Addpoints(int pointsAdded)
+    public void AddPoints(int pointsAdded)
     {
         points += pointsAdded;
+    }
+
+    public void UpdateGlide(float glide)
+    {
+        _glideValue = glide;
     }
 }
