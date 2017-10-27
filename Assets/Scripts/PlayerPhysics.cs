@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour {
 
-    public Slider glideBar;
 
     [SerializeField]
     private GameObject _dot;
@@ -24,6 +23,8 @@ public class PlayerPhysics : MonoBehaviour {
 
     private Vector3 _glideForceIntensity;
 
+    private HUDManager HUD;
+
 
     // Use this for initialization
     void Start () {
@@ -34,10 +35,8 @@ public class PlayerPhysics : MonoBehaviour {
 
         _dotLine = new GameObject[10];
         _glideValue = 40;
-
-        glideBar.value = _glideValue;
-       
-
+        
+        HUD = GameObject.FindGameObjectWithTag("HUDManager").GetComponent<HUDManager>();
 
         //Fill array with dot gameObjects and set them to false
         for (int i = 0; i < _dotLine.Length; i++)
@@ -49,13 +48,10 @@ public class PlayerPhysics : MonoBehaviour {
 		
 	}
 	
-
 	void Update () {
         
         float forceInX;
         float forceInY;
-
-        glideBar.value = _glideValue;
 
         if (_canGlide)
             Glide();
@@ -86,10 +82,9 @@ public class PlayerPhysics : MonoBehaviour {
            {
                _dotLine[i].SetActive(false);
            }
-
-            _canGlide = true;
-            
+            _canGlide = true;  
         }
+        HUD.UpdateGlide(_glideValue);
     }
 
     private void Aim()
@@ -126,7 +121,6 @@ public class PlayerPhysics : MonoBehaviour {
             if (_glideValue == 0)
                 _canGlide = false;
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -136,13 +130,14 @@ public class PlayerPhysics : MonoBehaviour {
         if (collision.gameObject.CompareTag("Target"))
         {
             contactVelocity = _rigidbody.velocity.magnitude;
-        
-
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
 
-        }
-            
-            
+        }    
+    }
+
+    private void ExplosiveHit(float power, Vector3 explosionPosition, float radius, float upForce, float effect)
+    {
+        _rigidbody.AddExplosionForce(power, explosionPosition, radius, upForce, ForceMode.Impulse);
     }
 
 }

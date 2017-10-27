@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class _GameManager : MonoBehaviour {
-
-    //public Slider glideBar;
+public class HUDManager : MonoBehaviour {
+    
     private float _glideValue;
-
+    public Slider glideBar;
     private int points;
     public Text pointText;
 
 	
 	void Start () {
         points = 0;
-       //_glideValue = 40;
-       // glideBar.value = _glideValue;
+       _glideValue = 40;
+       glideBar.value = _glideValue;
     }
 	
 	
 	void Update () {
         pointText.text = points.ToString();
-       // glideBar.value = _glideValue;
+       glideBar.value = _glideValue;
     }
 
     public void AddPoints(int pointsAdded)
