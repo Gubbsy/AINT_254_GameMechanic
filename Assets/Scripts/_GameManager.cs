@@ -11,13 +11,26 @@ public class _GameManager : MonoBehaviour {
     private int points;
     public Text pointText;
 
+    public static Dictionary<Collider, DestructableObject> dictionary = new Dictionary<Collider, DestructableObject>();
 	
 	void Start () {
         points = 0;
-       //_glideValue = 40;
-       // glideBar.value = _glideValue;
+        //_glideValue = 40;
+        // glideBar.value = _glideValue;
+
+        foreach (GameObject thing in Object.FindObjectsOfType<GameObject>())     
+        {
+            Collider col = thing.GetComponent<Collider>();
+            DestructableObject obj = thing.GetComponent<DestructableObject>();
+
+            if (col != null && obj != null)
+            {
+                dictionary.Add(col, obj);
+            }
+        }
     }
 	
+
 	
 	void Update () {
         pointText.text = points.ToString();

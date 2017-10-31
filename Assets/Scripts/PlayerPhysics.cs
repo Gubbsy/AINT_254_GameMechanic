@@ -13,15 +13,12 @@ public class PlayerPhysics : MonoBehaviour {
     //[SerializeField]
 
     public float _forceValue;
-
     private GameObject[] _dotLine;
     private Transform _transform;
     private Vector3 _direction;
     private Rigidbody _rigidbody;
-
     private bool _canGlide = false;
     private float _glideValue;
-
     private Vector3 _glideForceIntensity;
 
 

@@ -8,6 +8,9 @@ public class DestructableObject : MonoBehaviour {
 
     private int _objectHealth = 20;
     private int _pointsGiven;
+    Rigidbody rb;
+    ForceMode forceMode;
+    
     
     private _GameManager GMscript;
 
@@ -17,6 +20,8 @@ public class DestructableObject : MonoBehaviour {
     {
         GameObject GameManager = GameObject.Find("GameManager");
         GMscript = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
+        rb = GetComponent<Rigidbody>();
+        forceMode = ForceMode.Impulse;
     }
 
     //Take damage and add points to Game Manager
@@ -40,6 +45,14 @@ public class DestructableObject : MonoBehaviour {
     void Die()
     {
         gameObject.SetActive(false);
+    }
+
+    public void Exploded(float power, Vector3 explosionPosition, float radius, float upForce, float effect)
+    {
+        Debug.Log("Exploded called");
+
+        rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
+        TakeDamage((int) (power * effect));
     }
 }
 
