@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33323343651331988}
   - component: {fileID: 23492247824043392}
   m_Layer: 0
-  m_Name: Dot
+  m_Name: Arc Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

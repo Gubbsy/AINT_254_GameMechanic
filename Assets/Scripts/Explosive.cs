@@ -14,81 +14,44 @@ public class Explosive : MonoBehaviour
     [SerializeField]
     LayerMask layerMask;
 
-    
+
     /// <summary>
-    /// Detonate explosive detecting all objects in range and apply explosive force
+    /// Detonate explosive detecting all objects in range and calling DestuctableObject to apply explosive force
+    /// and damage to objects in range 
     /// </summary>
-    //void Detonate()
-    //{
-    //    explosionPosition = transform.position;
-    //    Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius, layerMask);
-        
-
-    //    foreach (Collider hit in colliders)
-    //    {
-    //        rb = hit.GetComponent<Rigidbody>();
-
-    //        if (rb != null)
-    //        {
-    //            rb.AddExplosionForce(power, explosionPosition, radius, upForce, ForceMode.Impulse);
-    //        }
-    //    }
-
-    //    AreaDamageEnemies();
-    //}
-
-    //Detect all objects in range of explosion and apply damage repective of the position from the blast origin.
-    void AreaDamageEnemies()
+    void Detonate()
     {
-
         explosionPosition = transform.position;
         Collider[] objectsInRange = Physics.OverlapSphere(explosionPosition, radius);
-
 
         foreach (Collider col in objectsInRange)
         {
             Debug.Log(col.gameObject.name);
-
         }
 
         foreach (Collider col in objectsInRange)
         {
             float proximity = (explosionPosition - col.transform.position).magnitude;
             float effect = 1 - (proximity / radius);
-
            
             if (_GameManager.dictionary.ContainsKey(col))
             {
                 _GameManager.dictionary[col].Exploded(power, explosionPosition, radius, upForce, effect);
             }
-                
-            //DestructableObject target = col.gameObject.GetComponent<DestructableObject>();
-
-            //if (target != null)
-            //{
-            //    float proximity = (explosionPosition - target.transform.position).magnitude;
-            //    float effect = 1 - (proximity / radius);
-
-            //    target.Exploded(power, explosionPosition, radius, upForce, effect);
-          
-            //}
         }
     }
 
     //If explosive is in a collision with player or object of a cedrtain velocity, detonate.
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Target"))
         {
            
             if(collision.relativeVelocity.magnitude > 10)
             {
-                AreaDamageEnemies();
+                Detonate();
                 gameObject.SetActive(false);
             }
-
         }
-        
     }
 }

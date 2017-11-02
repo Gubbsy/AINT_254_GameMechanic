@@ -5,21 +5,25 @@ using UnityEngine;
 public class DestructableObject : MonoBehaviour {
 
     [SerializeField]
-
     private int _objectHealth = 20;
+
+    [SerializeField]
+    private int _pointsMuliplier; 
+
     private int _pointsGiven;
     Rigidbody rb;
+    
     ForceMode forceMode;
-    
-    
+
     private _GameManager GMscript;
 
 
-    //Get refernce for GameManager Script
+    //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
         GameObject GameManager = GameObject.Find("GameManager");
         GMscript = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
+
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
     }
@@ -27,12 +31,12 @@ public class DestructableObject : MonoBehaviour {
     //Take damage and add points to Game Manager
     public void TakeDamage(int damageTaken)
     {
-        Debug.Log(gameObject.name + "Damage Taken: " + damageTaken);
+        Debug.Log(gameObject.name + " Damage Taken: " + damageTaken);
 
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
 
-        GMscript.AddPoints(_pointsGiven);
+        GMscript.AddPoints(_pointsGiven * _pointsMuliplier);
 
         // if health is below zero then die
         if (_objectHealth < 0)
@@ -47,10 +51,9 @@ public class DestructableObject : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
+    //Each destructable object handles there own force and damage respectivley. 
     public void Exploded(float power, Vector3 explosionPosition, float radius, float upForce, float effect)
     {
-        Debug.Log("Exploded called");
-
         rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
         TakeDamage((int) (power * effect));
     }

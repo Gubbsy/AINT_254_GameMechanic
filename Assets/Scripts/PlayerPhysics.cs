@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour {
 
-    public Slider glideBar;
+    
 
     [SerializeField]
     private GameObject _dot;
@@ -20,6 +20,7 @@ public class PlayerPhysics : MonoBehaviour {
     private bool _canGlide = false;
     private float _glideValue;
     private Vector3 _glideForceIntensity;
+    private _GameManager _GM; 
 
 
     // Use this for initialization
@@ -32,8 +33,8 @@ public class PlayerPhysics : MonoBehaviour {
         _dotLine = new GameObject[10];
         _glideValue = 40;
 
-        glideBar.value = _glideValue;
-       
+        GameObject GameManager = GameObject.Find("GameManager");
+        _GM = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
 
 
         //Fill array with dot gameObjects and set them to false
@@ -52,7 +53,7 @@ public class PlayerPhysics : MonoBehaviour {
         float forceInX;
         float forceInY;
 
-        glideBar.value = _glideValue;
+        _GM.UpdateGlide(_glideValue);
 
         if (_canGlide)
             Glide();
@@ -133,8 +134,6 @@ public class PlayerPhysics : MonoBehaviour {
         if (collision.gameObject.CompareTag("Target"))
         {
             contactVelocity = _rigidbody.velocity.magnitude;
-        
-
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
 
         }
