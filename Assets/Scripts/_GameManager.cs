@@ -32,6 +32,7 @@ public class _GameManager : MonoBehaviour {
 
         ScoreMenu.SetActive(false);
         endTurnTimer = 7;
+        _glideValue = 40;
         
         
 

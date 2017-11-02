@@ -118,7 +118,7 @@ public class PlayerPhysics : MonoBehaviour {
         _glideForceIntensity = new Vector3(_glideValue, 0, 0);
         _glideForceIntensity *= Input.GetAxis("Horizontal");
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("Horizontal") > 0)
         {
             _glideValue -= 0.5f;
 
