@@ -20,7 +20,8 @@ public class PlayerPhysics : MonoBehaviour {
     private bool _canGlide = false;
     private float _glideValue;
     private Vector3 _glideForceIntensity;
-    private _GameManager _GM; 
+    private _GameManager _GM;
+   
 
 
     // Use this for initialization
@@ -44,7 +45,7 @@ public class PlayerPhysics : MonoBehaviour {
             tempObj.SetActive(false);
             _dotLine[i] = tempObj;
         }
-		
+
 	}
 	
 
@@ -86,7 +87,7 @@ public class PlayerPhysics : MonoBehaviour {
            }
 
             _canGlide = true;
-            
+            _GM.EndTurn();
         }
     }
 
@@ -141,4 +142,5 @@ public class PlayerPhysics : MonoBehaviour {
             
     }
 
+  
 }

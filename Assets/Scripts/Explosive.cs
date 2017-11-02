@@ -24,10 +24,7 @@ public class Explosive : MonoBehaviour
         explosionPosition = transform.position;
         Collider[] objectsInRange = Physics.OverlapSphere(explosionPosition, radius);
 
-        foreach (Collider col in objectsInRange)
-        {
-            Debug.Log(col.gameObject.name);
-        }
+        
 
         foreach (Collider col in objectsInRange)
         {

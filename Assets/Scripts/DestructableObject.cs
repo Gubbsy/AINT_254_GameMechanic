@@ -31,7 +31,7 @@ public class DestructableObject : MonoBehaviour {
     //Take damage and add points to Game Manager
     public void TakeDamage(int damageTaken)
     {
-        Debug.Log(gameObject.name + " Damage Taken: " + damageTaken);
+       // Debug.Log(gameObject.name + " Damage Taken: " + damageTaken);
 
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
