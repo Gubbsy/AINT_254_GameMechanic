@@ -17,6 +17,13 @@ public class Explosive : MonoBehaviour
     [SerializeField]
     LayerMask layerMask;
 
+    private GameObject empty;
+
+    private void Start()
+    {
+        empty = GameObject.FindGameObjectWithTag("emptyExplosions");
+    }
+
 
     /// <summary>
     /// Detonate explosive detecting all objects in range and calling DestuctableObject to apply explosive force
@@ -24,6 +31,8 @@ public class Explosive : MonoBehaviour
     /// </summary>
     void Detonate()
     {
+        Instantiate(explosion, transform.position,transform.rotation, empty.transform);
+
         explosionPosition = transform.position;
         Collider[] objectsInRange = Physics.OverlapSphere(explosionPosition, radius);
 
@@ -39,7 +48,7 @@ public class Explosive : MonoBehaviour
                 _GameManager.dictionary[col].Exploded(power, explosionPosition, radius, upForce, effect);
             }
 
-            Instantiate(explosion);
+            
         }
     }
 
