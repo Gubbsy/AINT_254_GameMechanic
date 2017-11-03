@@ -85,7 +85,6 @@ public class _GameManager : MonoBehaviour {
     public int GetPoints()
     {
         return _points;
-        Debug.Log("Get points called" + _points);
     }
 
     public void EndTurn()

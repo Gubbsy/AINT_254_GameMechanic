@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Explosive : MonoBehaviour
 {
-    
+    public GameObject explosion;
+    private ParticleSystem explosionInstance;
+
     public float power = 10.0f;
     public float radius = 5.0f;
     public float upForce = 1.0f;
+    public float damageRequired;
     private Rigidbody rb;
     private Vector3 explosionPosition;
 
@@ -35,6 +38,8 @@ public class Explosive : MonoBehaviour
             {
                 _GameManager.dictionary[col].Exploded(power, explosionPosition, radius, upForce, effect);
             }
+
+            Instantiate(explosion);
         }
     }
 
@@ -44,11 +49,16 @@ public class Explosive : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Target"))
         {
            
-            if(collision.relativeVelocity.magnitude > 10)
+            if(collision.relativeVelocity.magnitude >= damageRequired)
             {
                 Detonate();
-                gameObject.SetActive(false);
+                gameObject.SetActive(false);               
             }
         }
+    }
+
+    private void onDsetroy()
+    {
+        explosionInstance.Pause(true);
     }
 }
