@@ -8,16 +8,14 @@ public class _GameManager : MonoBehaviour {
 
 
     public Slider glideBar;
-    private float _glideValue;
-
-    private bool endTimer;
-    private float endTurnTimer;
-
-
-
-    public GameObject ScoreMenu;
-
+    public GameObject scoreMenu;
     public Text pointText;
+
+    private float _glideValue;
+    private bool _endTimer;
+    private float _endTurnTimer;
+
+
     private int _points;
    
     
@@ -30,8 +28,8 @@ public class _GameManager : MonoBehaviour {
 
         Time.timeScale = 1.0f;
 
-        ScoreMenu.SetActive(false);
-        endTurnTimer = 7;
+        scoreMenu.SetActive(false);
+        _endTurnTimer = 7;
         _glideValue = 40;
         
         
@@ -55,16 +53,16 @@ public class _GameManager : MonoBehaviour {
         pointText.text = _points.ToString();
         glideBar.value = _glideValue;
 
-        if (endTimer)
+        if (_endTimer)
         {
-            endTurnTimer -= Time.deltaTime;
+            _endTurnTimer -= Time.deltaTime;
            // Debug.Log("Count down timer" + endTurnTimer);
         }
 
-        if (endTurnTimer < 0)
+        if (_endTurnTimer < 0)
         {
-            ScoreMenu.SetActive(true);
-            endTimer = false;
+            scoreMenu.SetActive(true);
+            _endTimer = false;
         }
             
 
@@ -90,7 +88,7 @@ public class _GameManager : MonoBehaviour {
     public void EndTurn()
     {
         Debug.Log("EndTurn Called");
-        endTimer = true;
+        _endTimer = true;
     }
 
     public void ResetLevel()

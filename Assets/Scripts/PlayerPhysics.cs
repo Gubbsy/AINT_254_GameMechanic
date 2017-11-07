@@ -10,7 +10,6 @@ public class PlayerPhysics : MonoBehaviour {
     [SerializeField]
     private GameObject _dot;
 
-    //[SerializeField]
 
     public float _forceValue;
     private GameObject[] _dotLine;

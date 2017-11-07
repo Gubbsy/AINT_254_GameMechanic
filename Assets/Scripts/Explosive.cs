@@ -5,23 +5,18 @@ using UnityEngine;
 public class Explosive : MonoBehaviour
 {
     public GameObject explosion;
-    private ParticleSystem explosionInstance;
 
     public float power = 10.0f;
     public float radius = 5.0f;
     public float upForce = 1.0f;
     public float damageRequired;
-    private Rigidbody rb;
-    private Vector3 explosionPosition;
-
-    [SerializeField]
-    LayerMask layerMask;
-
-    private GameObject empty;
+  
+    private Vector3 _explosionPosition;
+    private GameObject _PSObject;
 
     private void Start()
     {
-        empty = GameObject.FindGameObjectWithTag("emptyExplosions");
+        _PSObject = GameObject.FindGameObjectWithTag("emptyExplosions");
     }
 
 
@@ -31,21 +26,21 @@ public class Explosive : MonoBehaviour
     /// </summary>
     void Detonate()
     {
-        Instantiate(explosion, transform.position,transform.rotation, empty.transform);
+        Instantiate(explosion, transform.position,transform.rotation, _PSObject.transform);
 
-        explosionPosition = transform.position;
-        Collider[] objectsInRange = Physics.OverlapSphere(explosionPosition, radius);
+        _explosionPosition = transform.position;
+        Collider[] objectsInRange = Physics.OverlapSphere(_explosionPosition, radius);
 
         
 
         foreach (Collider col in objectsInRange)
         {
-            float proximity = (explosionPosition - col.transform.position).magnitude;
+            float proximity = (_explosionPosition - col.transform.position).magnitude;
             float effect = 1 - (proximity / radius);
            
             if (_GameManager.dictionary.ContainsKey(col))
             {
-                _GameManager.dictionary[col].Exploded(power, explosionPosition, radius, upForce, effect);
+                _GameManager.dictionary[col].Exploded(power, _explosionPosition, radius, upForce, effect);
             }
 
             
@@ -66,8 +61,4 @@ public class Explosive : MonoBehaviour
         }
     }
 
-    private void onDsetroy()
-    {
-        explosionInstance.Pause(true);
-    }
 }
