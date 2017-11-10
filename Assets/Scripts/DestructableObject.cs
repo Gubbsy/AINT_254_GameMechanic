@@ -57,5 +57,25 @@ public class DestructableObject : MonoBehaviour {
         rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
         TakeDamage((int) (power * effect));
     }
+    
+    public void TakeFireDamage()
+    {
+        StartCoroutine(FireDamage());
+    }
+
+    //void StopFireDamage()
+    //{
+    //    StopCoroutine(FireDamage());
+    //}
+
+    public IEnumerator FireDamage()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            TakeDamage(2);
+            Debug.Log("Taken 2 fire damage! " + System.DateTime.Now.ToString("HH:MM:ss.ff"));
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 }
 
