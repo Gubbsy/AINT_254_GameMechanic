@@ -7,6 +7,11 @@ public class FireBreathing : MonoBehaviour {
     private GameObject _flames;
     private GameObject _damagedItem;
 
+    [SerializeField]
+    float flameTime = 1.5f;
+
+    private bool flameOn = false;
+
      void Start()
     {
         _flames = GameObject.FindGameObjectWithTag("FlameCollider");
@@ -18,21 +23,27 @@ public class FireBreathing : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.E))
         {
-            Debug.Log("E pressed");
+            flameOn = true;
+        }
+
+        if (flameOn == true)
+        {
             _flames.SetActive(true);
+            flameTime -= Time.deltaTime;
+            if (flameTime < 0)
+                flameOn = false;
         }
         else
-        {
-           _flames.SetActive(false);
-        }
+            _flames.SetActive(false);
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
         _damagedItem = other.gameObject;
-        if (_GameManager.dictionary.ContainsKey(other))
-            _GameManager.dictionary[other].TakeFireDamage();
+        if (_GameManager.desObjDictionary.ContainsKey(other))
+            _GameManager.desObjDictionary[other].TakeFireDamage();
     }
 
     

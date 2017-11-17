@@ -69,7 +69,6 @@ public class PlayerPhysics : MonoBehaviour {
             forceInX = (characterPosition.x - Input.mousePosition.x);
             forceInY = (characterPosition.y - Input.mousePosition.y);
 
-            //Drag distance calculation a^2 = b^2 + c^2
             _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
            
             Aim();
@@ -124,7 +123,6 @@ public class PlayerPhysics : MonoBehaviour {
             if (_glideValue == 0)
                 _canGlide = false;
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -135,10 +133,7 @@ public class PlayerPhysics : MonoBehaviour {
         {
             contactVelocity = _rigidbody.velocity.magnitude;
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
-
         }
-            
-            
     }
 
   

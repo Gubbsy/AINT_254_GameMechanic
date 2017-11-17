@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 23167211222200126}
   - component: {fileID: 54368298089591592}
   - component: {fileID: 114907176002640000}
+  - component: {fileID: 114762405846951786}
   m_Layer: 8
   m_Name: Explosive Barrel
-  m_TagString: Untagged
+  m_TagString: explosiveObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073644651122104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.32, y: 0.3900835, z: -3.96}
+  m_LocalPosition: {x: 11.7, y: 0.3900835, z: -3.4244077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +99,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114762405846951786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073644651122104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectHealth: 10
+  _pointsMuliplier: 0
 --- !u!114 &114907176002640000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,8 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1627342551697604, guid: be631888a6b76a14b8160c3e286e9a6d, type: 2}
   power: 40
-  radius: 7
-  upForce: 4
+  radius: 15
+  upForce: 5
   damageRequired: 7
 --- !u!136 &136975402286310688
 CapsuleCollider:

@@ -4,6 +4,11 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum pickupTypes {
+    Fire,
+    Explosive
+}
+
 public class _GameManager : MonoBehaviour {
 
 
@@ -14,14 +19,12 @@ public class _GameManager : MonoBehaviour {
     private float _glideValue;
     private bool _endTimer;
     private float _endTurnTimer;
-
-
+    private int _noFire;
+    private int _noExplosives;
     private int _points;
-   
-    
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
-    public static Dictionary<Collider, DestructableObject> dictionary = new Dictionary<Collider, DestructableObject>();
+    public static Dictionary<Collider, DestructableObject> desObjDictionary = new Dictionary<Collider, DestructableObject>();
 	
 	void Start () {
         _points = 0;
@@ -32,9 +35,8 @@ public class _GameManager : MonoBehaviour {
         _endTurnTimer = 7;
         _glideValue = 40;
         
-        
 
-        //Loop through all gameobjects in scene and add to dictionary of it has a collider and 
+        //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
         // Destructable GameObject Script 
         foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())     
         {
@@ -43,7 +45,7 @@ public class _GameManager : MonoBehaviour {
 
             if (col != null && destScript != null)
             {
-                dictionary.Add(col, destScript);
+                desObjDictionary.Add(col, destScript);
             }
         }
     }
@@ -78,6 +80,44 @@ public class _GameManager : MonoBehaviour {
     public void UpdateGlide(float glide)
     {
         _glideValue = glide;
+    }
+
+    public void AddPickup(pickupTypes type, bool isAdding)
+    {
+        if (isAdding)
+            switch (type)
+            {
+                case pickupTypes.Fire:
+                    _noFire += 1;
+                    break;
+                case pickupTypes.Explosive:
+                    _noExplosives += 1;
+                    break;
+            }
+        else
+            switch (type)
+            {
+                case pickupTypes.Fire:
+                    if (_noFire > 0)
+                        _noFire -= 1;
+                    break;
+                case pickupTypes.Explosive:
+                    if (_noExplosives > 0)
+                        _noExplosives -= 1;
+                    break;
+            }
+    }
+
+    public int GetPickUp(pickupTypes type)
+    {
+        if (type == pickupTypes.Fire)
+            return _noFire;
+
+        else if (type == pickupTypes.Explosive)
+            return _noExplosives;
+
+        else
+            return -1;
     }
 
     public int GetPoints()

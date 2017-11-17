@@ -12,20 +12,23 @@ public class DestructableObject : MonoBehaviour {
 
     private int _pointsGiven;
     Rigidbody rb;
-    
     ForceMode forceMode;
-
     private _GameManager GMscript;
+    public bool _hasExploded;
+    private Explosive _explosive;
 
 
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
         GameObject GameManager = GameObject.Find("GameManager");
-        GMscript = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
+        GMscript = GameManager.GetComponent<_GameManager>();
 
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
+
+        _explosive = gameObject.GetComponent<Explosive>();
+
     }
 
     //Take damage and add points to Game Manager
@@ -48,12 +51,19 @@ public class DestructableObject : MonoBehaviour {
 
     void Die()
     {
+        if (gameObject.tag == "explosiveObj")
+        {
+            _explosive = (Explosive)gameObject.GetComponent(typeof(Explosive));
+            _explosive.Detonate();
+        }
+
         gameObject.SetActive(false);
     }
 
     //Each destructable object handles there own force and damage respectivley. 
     public void Exploded(float power, Vector3 explosionPosition, float radius, float upForce, float effect)
     {
+        _hasExploded = true;
         rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
         TakeDamage((int) (power * effect));
     }
@@ -63,10 +73,7 @@ public class DestructableObject : MonoBehaviour {
         StartCoroutine(FireDamage());
     }
 
-    //void StopFireDamage()
-    //{
-    //    StopCoroutine(FireDamage());
-    //}
+
 
     public IEnumerator FireDamage()
     {
