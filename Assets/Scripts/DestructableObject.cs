@@ -13,7 +13,7 @@ public class DestructableObject : MonoBehaviour {
     private int _pointsGiven;
     Rigidbody rb;
     ForceMode forceMode;
-    private _GameManager GMscript;
+  
     public bool _hasExploded;
     private Explosive _explosive;
 
@@ -21,9 +21,7 @@ public class DestructableObject : MonoBehaviour {
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
-        GameObject GameManager = GameObject.Find("GameManager");
-        GMscript = GameManager.GetComponent<_GameManager>();
-
+      
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
 
@@ -39,7 +37,7 @@ public class DestructableObject : MonoBehaviour {
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
 
-        GMscript.AddPoints(_pointsGiven * _pointsMuliplier);
+        _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
         // if health is below zero then die
         if (_objectHealth < 0)
@@ -71,6 +69,8 @@ public class DestructableObject : MonoBehaviour {
     public void TakeFireDamage()
     {
         StartCoroutine(FireDamage());
+        Renderer rend = GetComponent<Renderer>();
+        rend.material.color = Color.black;
     }
 
 

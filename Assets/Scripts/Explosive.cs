@@ -57,18 +57,4 @@ public class Explosive : MonoBehaviour
         }
     }
 
-    //If explosive is in a collision with player or object of a cedrtain velocity, detonate.
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Target"))
-    //    {
-           
-    //        if(collision.relativeVelocity.magnitude >= damageRequired)
-    //        {
-    //            Detonate();
-    //            gameObject.SetActive(false);               
-    //        }
-    //    }
-    //}
-
 }

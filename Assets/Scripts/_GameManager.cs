@@ -12,16 +12,16 @@ public enum pickupTypes {
 public class _GameManager : MonoBehaviour {
 
 
-    public Slider glideBar;
-    public GameObject scoreMenu;
-    public Text pointText;
+    public  Slider glideBar;
+    public  GameObject scoreMenu;
+    public  Text pointText;
 
-    private float _glideValue;
-    private bool _endTimer;
-    private float _endTurnTimer;
-    private int _noFire;
-    private int _noExplosives;
-    private int _points;
+    private static float _glideValue;
+    private static bool _endTimer;
+    private static float _endTurnTimer;
+    private static int _noFire;
+    private static int _noExplosives;
+    private static int _points;
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
     public static Dictionary<Collider, DestructableObject> desObjDictionary = new Dictionary<Collider, DestructableObject>();
@@ -71,18 +71,18 @@ public class _GameManager : MonoBehaviour {
     }
 
     //Add points
-    public void AddPoints(int pointsAdded)
+    public static void AddPoints(int pointsAdded)
     {
         _points += pointsAdded;
     }
 
     //Update glide value to that used
-    public void UpdateGlide(float glide)
+    public static void UpdateGlide(float glide)
     {
         _glideValue = glide;
     }
 
-    public void AddPickup(pickupTypes type, bool isAdding)
+    public static void QuantPickUp(pickupTypes type, bool isAdding)
     {
         if (isAdding)
             switch (type)
@@ -108,7 +108,7 @@ public class _GameManager : MonoBehaviour {
             }
     }
 
-    public int GetPickUp(pickupTypes type)
+    public static int GetPickUp(pickupTypes type)
     {
         if (type == pickupTypes.Fire)
             return _noFire;
@@ -120,12 +120,12 @@ public class _GameManager : MonoBehaviour {
             return -1;
     }
 
-    public int GetPoints()
+    public static int GetPoints()
     {
         return _points;
     }
 
-    public void EndTurn()
+    public static void EndTurn()
     {
         Debug.Log("EndTurn Called");
         _endTimer = true;

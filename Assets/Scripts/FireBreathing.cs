@@ -6,36 +6,45 @@ public class FireBreathing : MonoBehaviour {
 
     private GameObject _flames;
     private GameObject _damagedItem;
+    private int _noFire;
+    private int _noExplosive;
 
     [SerializeField]
     float flameTime = 1.5f;
 
-    private bool flameOn = false;
+    private bool _flameOn;
 
      void Start()
     {
         _flames = GameObject.FindGameObjectWithTag("FlameCollider");
-        Debug.Log(_flames.name);
         _flames.SetActive(false);
     }
 
      void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
+        Debug.Log("No fire pick-ups: " + _noFire);
+
+
+        if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
         {
-            flameOn = true;
+            _flameOn = true;
+            Debug.Log("Flame on val: " + _flameOn);
         }
 
-        if (flameOn == true)
+        if (_flameOn == true)
         {
             _flames.SetActive(true);
             flameTime -= Time.deltaTime;
+            _GameManager.QuantPickUp(pickupTypes.Fire, false);
             if (flameTime < 0)
-                flameOn = false;
+                _flameOn = false;
         }
         else
+        {
             _flames.SetActive(false);
-       
+            flameTime = 1.5f;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

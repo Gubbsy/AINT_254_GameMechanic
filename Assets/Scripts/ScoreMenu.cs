@@ -16,15 +16,12 @@ public class ScoreMenu : MonoBehaviour {
     private string _grading;
     private int _points;
 
-    private _GameManager GM;
+
 
     // Use this for initialization
     void Start() {
 
-        GameObject GameManager = GameObject.Find("GameManager");
-        GM = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
-
-        _points = GM.GetPoints();
+        _points = _GameManager.GetPoints();
         score.text = _points.ToString();
 
         if (_points < _bronzeLevel)

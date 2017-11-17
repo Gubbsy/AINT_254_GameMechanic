@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectHealth: 10
   _pointsMuliplier: 0
+  _hasExploded: 0
 --- !u!114 &114907176002640000
 MonoBehaviour:
   m_ObjectHideFlags: 1

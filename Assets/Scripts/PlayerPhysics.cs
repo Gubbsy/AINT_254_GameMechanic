@@ -33,9 +33,6 @@ public class PlayerPhysics : MonoBehaviour {
         _dotLine = new GameObject[10];
         _glideValue = 40;
 
-        GameObject GameManager = GameObject.Find("GameManager");
-        _GM = (_GameManager)GameManager.GetComponent(typeof(_GameManager));
-
 
         //Fill array with dot gameObjects and set them to false
         for (int i = 0; i < _dotLine.Length; i++)
@@ -53,7 +50,7 @@ public class PlayerPhysics : MonoBehaviour {
         float forceInX;
         float forceInY;
 
-        _GM.UpdateGlide(_glideValue);
+        _GameManager.UpdateGlide(_glideValue);
 
         if (_canGlide)
             Glide();
@@ -85,7 +82,7 @@ public class PlayerPhysics : MonoBehaviour {
            }
 
             _canGlide = true;
-            _GM.EndTurn();
+            _GameManager.EndTurn();
         }
     }
 
@@ -129,7 +126,7 @@ public class PlayerPhysics : MonoBehaviour {
     {
         float contactVelocity;
   
-        if (collision.gameObject.CompareTag("Target"))
+        if (_GameManager.desObjDictionary.ContainsKey(collision.collider))
         {
             contactVelocity = _rigidbody.velocity.magnitude;
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
