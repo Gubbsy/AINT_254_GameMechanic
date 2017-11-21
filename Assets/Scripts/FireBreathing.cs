@@ -23,13 +23,13 @@ public class FireBreathing : MonoBehaviour {
      void Update()
     {
         _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
-        Debug.Log("No fire pick-ups: " + _noFire);
+       
 
 
         if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
         {
             _flameOn = true;
-            Debug.Log("Flame on val: " + _flameOn);
+          
         }
 
         if (_flameOn == true)
@@ -49,7 +49,7 @@ public class FireBreathing : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
+       
         _damagedItem = other.gameObject;
         if (_GameManager.desObjDictionary.ContainsKey(other))
             _GameManager.desObjDictionary[other].TakeFireDamage();

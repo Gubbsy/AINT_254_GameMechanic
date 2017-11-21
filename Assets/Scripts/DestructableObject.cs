@@ -17,25 +17,30 @@ public class DestructableObject : MonoBehaviour {
     public bool _hasExploded;
     private Explosive _explosive;
 
+    [SerializeField]
+    Rigidbody[] structualDepen;
+
 
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
-      
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
 
         _explosive = gameObject.GetComponent<Explosive>();
-
     }
 
     //Take damage and add points to Game Manager
     public void TakeDamage(int damageTaken)
     {
-       // Debug.Log(gameObject.name + " Damage Taken: " + damageTaken);
+  
+        Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
 
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
+
+        Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
+        Debug.Log("Object: " + gameObject.name + "Points Given: " + _objectHealth);
 
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
@@ -56,6 +61,7 @@ public class DestructableObject : MonoBehaviour {
         }
 
         gameObject.SetActive(false);
+
     }
 
     //Each destructable object handles there own force and damage respectivley. 
@@ -80,9 +86,10 @@ public class DestructableObject : MonoBehaviour {
         for (int i = 0; i < 20; i++)
         {
             TakeDamage(2);
-            Debug.Log("Taken 2 fire damage! " + System.DateTime.Now.ToString("HH:MM:ss.ff"));
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+
 }
 

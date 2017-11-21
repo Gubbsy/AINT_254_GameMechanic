@@ -128,8 +128,8 @@ public class PlayerPhysics : MonoBehaviour {
   
         if (_GameManager.desObjDictionary.ContainsKey(collision.collider))
         {
-           
-            contactVelocity = _rigidbody.velocity.magnitude;
+            contactVelocity = _rigidbody.velocity.magnitude * 100;
+            Debug.Log("Contact velocity: " + contactVelocity);
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
         }
     }

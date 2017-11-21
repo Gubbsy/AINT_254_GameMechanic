@@ -9,6 +9,5 @@ public class FirePickUp : MonoBehaviour {
     {
         _GameManager.QuantPickUp(pickupTypes.Fire, true);
         gameObject.SetActive(false);
-        Debug.LogFormat("Fire Picked Up, Total Fire Pick ups: " + _GameManager.GetPickUp(pickupTypes.Fire));
     }
 }

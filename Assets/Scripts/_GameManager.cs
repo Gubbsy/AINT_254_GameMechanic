@@ -74,6 +74,7 @@ public class _GameManager : MonoBehaviour {
     public static void AddPoints(int pointsAdded)
     {
         _points += pointsAdded;
+        //Debug.Log("Points given: " + pointsAdded);
     }
 
     //Update glide value to that used
