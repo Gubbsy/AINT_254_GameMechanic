@@ -40,7 +40,7 @@ public class DestructableObject : MonoBehaviour {
         _pointsGiven = damageTaken;
 
         Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
-        Debug.Log("Object: " + gameObject.name + "Points Given: " + _objectHealth);
+        Debug.Log("Object: " + gameObject.name + "Points Given: " + _pointsGiven);
 
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
@@ -52,11 +52,11 @@ public class DestructableObject : MonoBehaviour {
 
     }
 
+    // If tagged as being explosive, then detonate, and disable gameobject. 
     void Die()
     {
         if (gameObject.tag == "explosiveObj")
-        {
-            _explosive = (Explosive)gameObject.GetComponent(typeof(Explosive));
+        {  
             _explosive.Detonate();
         }
 

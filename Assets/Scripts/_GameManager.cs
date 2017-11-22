@@ -4,13 +4,12 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Enum for pick-ups (alows for addition at later date)
 public enum pickupTypes {
     Fire,
-    Explosive
 }
 
 public class _GameManager : MonoBehaviour {
-
 
     public  Slider glideBar;
     public  GameObject scoreMenu;
@@ -58,7 +57,6 @@ public class _GameManager : MonoBehaviour {
         if (_endTimer)
         {
             _endTurnTimer -= Time.deltaTime;
-           // Debug.Log("Count down timer" + endTurnTimer);
         }
 
         if (_endTurnTimer < 0)
@@ -74,7 +72,6 @@ public class _GameManager : MonoBehaviour {
     public static void AddPoints(int pointsAdded)
     {
         _points += pointsAdded;
-        //Debug.Log("Points given: " + pointsAdded);
     }
 
     //Update glide value to that used
@@ -83,6 +80,7 @@ public class _GameManager : MonoBehaviour {
         _glideValue = glide;
     }
 
+    //Add/Remove pick-ups based on enuma and bool input
     public static void QuantPickUp(pickupTypes type, bool isAdding)
     {
         if (isAdding)
@@ -90,9 +88,6 @@ public class _GameManager : MonoBehaviour {
             {
                 case pickupTypes.Fire:
                     _noFire += 1;
-                    break;
-                case pickupTypes.Explosive:
-                    _noExplosives += 1;
                     break;
             }
         else
@@ -102,36 +97,33 @@ public class _GameManager : MonoBehaviour {
                     if (_noFire > 0)
                         _noFire -= 1;
                     break;
-                case pickupTypes.Explosive:
-                    if (_noExplosives > 0)
-                        _noExplosives -= 1;
-                    break;
             }
     }
 
+    //Return number of pick-ups
     public static int GetPickUp(pickupTypes type)
     {
         if (type == pickupTypes.Fire)
             return _noFire;
 
-        else if (type == pickupTypes.Explosive)
-            return _noExplosives;
-
         else
             return -1;
     }
 
+    //Get points 
     public static int GetPoints()
     {
         return _points;
     }
 
+    //End turn
     public static void EndTurn()
     {
         Debug.Log("EndTurn Called");
         _endTimer = true;
     }
 
+    //Reset Level
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

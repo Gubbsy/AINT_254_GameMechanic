@@ -5,26 +5,29 @@ using UnityEngine;
 public class FireBreathing : MonoBehaviour {
 
     private GameObject _flames;
-    private GameObject _damagedItem;
+    private GameObject _damagedObj;
     private int _noFire;
-    private int _noExplosive;
-
+    
     [SerializeField]
     float flameTime = 1.5f;
 
     private bool _flameOn;
 
+    //Find flame collider object
      void Start()
     {
         _flames = GameObject.FindGameObjectWithTag("FlameCollider");
         _flames.SetActive(false);
     }
 
+    /// <summary>
+    /// Get the number of fire pick-ups and if there is more
+    /// than 1 pick-up in inventroy and 'E' is pressed toggle on fire.
+    /// Fire is then toggled off after a set perio of time, and pick-up removed from inventory. 
+    /// </summary>
      void Update()
     {
         _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
-       
-
 
         if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
         {
@@ -47,10 +50,10 @@ public class FireBreathing : MonoBehaviour {
         }
     }
 
+    // On collison with flames, and object is in destObjDictionary,
+    // take fire damage.
     private void OnTriggerEnter(Collider other)
     {
-       
-        _damagedItem = other.gameObject;
         if (_GameManager.desObjDictionary.ContainsKey(other))
             _GameManager.desObjDictionary[other].TakeFireDamage();
     }

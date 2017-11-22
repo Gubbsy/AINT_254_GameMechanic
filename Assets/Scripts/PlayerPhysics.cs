@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour {
 
-    
-
     [SerializeField]
     private GameObject _dot;
 
@@ -128,7 +126,8 @@ public class PlayerPhysics : MonoBehaviour {
   
         if (_GameManager.desObjDictionary.ContainsKey(collision.collider))
         {
-            contactVelocity = _rigidbody.velocity.magnitude * 100;
+            collision.rigidbody.isKinematic = false;
+            contactVelocity = _rigidbody.velocity.magnitude;
             Debug.Log("Contact velocity: " + contactVelocity);
             collision.gameObject.SendMessage("TakeDamage", contactVelocity);
         }
