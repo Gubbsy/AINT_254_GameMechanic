@@ -20,12 +20,17 @@ public class KinematicTrigger : MonoBehaviour {
     {
         if (other.tag == "Player" || other.tag == "explosiveObj")
         {
-            int children = transform.childCount;
-            for (int i = 0; i < children; i++)
-            {
-                _rb = _tran.GetChild(i).GetComponent<Rigidbody>();
-                _rb.isKinematic = false;
-            }
+            disableKinematic();
+        }
+    }
+
+    public void disableKinematic()
+    {
+        int children = transform.childCount;
+        for (int i = 0; i < children; i++)
+        {
+            _rb = _tran.GetChild(i).GetComponent<Rigidbody>();
+            _rb.isKinematic = false;
         }
     }
 }

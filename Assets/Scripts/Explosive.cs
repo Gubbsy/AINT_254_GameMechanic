@@ -15,6 +15,8 @@ public class Explosive : MonoBehaviour
     private Vector3 _explosionPosition;
     private GameObject _PSObject;
     private Collider thisObjCol;
+    [SerializeField]
+    private Collider radiusCollider;
 
 
     private void Start()
@@ -35,6 +37,7 @@ public class Explosive : MonoBehaviour
 
         _explosionPosition = transform.position;
         Collider[] objectsInRange = Physics.OverlapSphere(_explosionPosition, radius);
+        radiusCollider.enabled = true;
                
         
 
@@ -50,11 +53,14 @@ public class Explosive : MonoBehaviour
             {
                 DestructableObject DO = _GameManager.desObjDictionary[col];
                 if (!DO._hasExploded)
+                {
                     DO.Exploded(power, _explosionPosition, radius, upForce, effect);
+                    DO.GetComponentInParent<KinematicTrigger>().disableKinematic();
+                }
+                    
             }
-
-            
         }
+        gameObject.SetActive(false);
     }
 
 }

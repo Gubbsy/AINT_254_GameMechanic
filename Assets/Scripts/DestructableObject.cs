@@ -59,9 +59,8 @@ public class DestructableObject : MonoBehaviour {
         {  
             _explosive.Detonate();
         }
-
-        gameObject.SetActive(false);
-
+        else
+            gameObject.SetActive(false);
     }
 
     //Each destructable object handles there own force and damage respectivley. 

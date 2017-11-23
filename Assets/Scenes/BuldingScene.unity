@@ -1524,7 +1524,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417994, guid: eefa18c7aee7d324eb1d4af38eafc25a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.84
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 417994, guid: eefa18c7aee7d324eb1d4af38eafc25a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1811,6 +1811,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad2e32217e50d54880b41ac39435e10, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1316725651 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1014406136250162, guid: 874df5259d800fc41beb049a183edc48,
+    type: 2}
+  m_PrefabInternal: {fileID: 2029265016}
+--- !u!135 &1316725652
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316725651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0.68785805, z: 0}
 --- !u!1 &1355620088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,7 +2664,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4399986454989048, guid: 874df5259d800fc41beb049a183edc48, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -45.62
+      value: -23.33
       objectReference: {fileID: 0}
     - target: {fileID: 4399986454989048, guid: 874df5259d800fc41beb049a183edc48, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2655,7 +2672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4399986454989048, guid: 874df5259d800fc41beb049a183edc48, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.92
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4399986454989048, guid: 874df5259d800fc41beb049a183edc48, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2686,6 +2703,11 @@ Prefab:
       propertyPath: _pointsMuliplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114131853959652840, guid: 874df5259d800fc41beb049a183edc48,
+        type: 2}
+      propertyPath: radiusCollider
+      value: 
+      objectReference: {fileID: 1316725652}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 874df5259d800fc41beb049a183edc48, type: 2}
   m_IsPrefabParent: 0
