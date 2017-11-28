@@ -21,7 +21,16 @@ public class KinematicTrigger : MonoBehaviour {
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {
-        float velocity = other.GetComponent<Rigidbody>().velocity.magnitude;
+        float velocity;
+
+        try
+        {
+             velocity = other.GetComponent<Rigidbody>().velocity.magnitude;
+        }
+        catch
+        {
+            velocity = 0;
+        }
 
         if ( velocity > _minVelocity)
         {

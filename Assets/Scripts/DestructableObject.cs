@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructableObject : MonoBehaviour {
+public class DestructableObject : MonoBehaviour, IDestructable {
 
     [SerializeField]
     private int _objectHealth = 20;
@@ -53,7 +53,7 @@ public class DestructableObject : MonoBehaviour {
     }
 
     // If tagged as being explosive, then detonate, and disable gameobject. 
-    void Die()
+    public void Die()
     {
         if (gameObject.tag == "explosiveObj")
         {  
@@ -78,12 +78,19 @@ public class DestructableObject : MonoBehaviour {
         rend.material.color = Color.black;
     }
 
-    public void disableKen()
+    public void DisableKen()
     {
         rb.isKinematic = false;
     }
 
+    public void  OnCollisionEnter(Collision other)
+    {
+            float contactVelocity;
+            contactVelocity = rb.velocity.magnitude;
+            Debug.Log("Contact velocity: " + contactVelocity);
 
+            TakeDamage((int)contactVelocity);
+    }
 
 
 
@@ -96,6 +103,9 @@ public class DestructableObject : MonoBehaviour {
         }
     }
 
-
+    public bool HasExploded()
+    {
+        return _hasExploded;
+    }
 }
 

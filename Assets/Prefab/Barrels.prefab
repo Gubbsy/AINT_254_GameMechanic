@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 6456224}
   - component: {fileID: 114096130238716762}
   - component: {fileID: 54178599257694220}
-  - component: {fileID: 114710459883555926}
   m_Layer: 0
   m_Name: barrel.003 (4)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,10 +33,9 @@ GameObject:
   - component: {fileID: 6471032}
   - component: {fileID: 114763790029692010}
   - component: {fileID: 54168489882429404}
-  - component: {fileID: 114936107548135948}
   m_Layer: 0
   m_Name: barrel.003 (2)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,10 +70,9 @@ GameObject:
   - component: {fileID: 6477424}
   - component: {fileID: 114328934443096686}
   - component: {fileID: 54338537421713998}
-  - component: {fileID: 114699233666229136}
   m_Layer: 0
   m_Name: barrel.003 (3)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,10 +90,9 @@ GameObject:
   - component: {fileID: 6403810}
   - component: {fileID: 114406105933509640}
   - component: {fileID: 54070719177139648}
-  - component: {fileID: 114694537415852972}
   m_Layer: 0
   m_Name: barrel.003 (5)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +110,9 @@ GameObject:
   - component: {fileID: 6494726}
   - component: {fileID: 114725150409550034}
   - component: {fileID: 54431818735445244}
-  - component: {fileID: 114873527193929380}
   m_Layer: 0
   m_Name: barrel.003
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,10 +130,9 @@ GameObject:
   - component: {fileID: 6416356}
   - component: {fileID: 114141759633275934}
   - component: {fileID: 54076140729284510}
-  - component: {fileID: 114473902246823810}
   m_Layer: 0
   m_Name: barrel.003 (1)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,10 +150,9 @@ GameObject:
   - component: {fileID: 6456426}
   - component: {fileID: 114286101511881266}
   - component: {fileID: 54769036203576830}
-  - component: {fileID: 114184228356843444}
   m_Layer: 0
   m_Name: barrel.003 (6)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,8 +163,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.16, y: -0.84, z: 0.97}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -30.7, y: -1, z: 0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449920}
@@ -183,7 +176,7 @@ Transform:
   - {fileID: 457006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &428484
 Transform:
   m_ObjectHideFlags: 1
@@ -819,21 +812,6 @@ MonoBehaviour:
   _pointsMuliplier: 1
   _hasExploded: 0
   structualDepen: []
---- !u!114 &114184228356843444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
 --- !u!114 &114286101511881266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -879,51 +857,6 @@ MonoBehaviour:
   _pointsMuliplier: 1
   _hasExploded: 0
   structualDepen: []
---- !u!114 &114473902246823810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
---- !u!114 &114694537415852972
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
---- !u!114 &114699233666229136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
 --- !u!114 &114710208194597356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -935,21 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de82b292da21e4b968d11813ae8260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114710459883555926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
+  _minVelocity: 5
 --- !u!114 &114725150409550034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,36 +885,6 @@ MonoBehaviour:
   _hasExploded: 0
   structualDepen: []
 --- !u!114 &114763790029692010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
---- !u!114 &114873527193929380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 1
-  _hasExploded: 0
-  structualDepen: []
---- !u!114 &114936107548135948
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

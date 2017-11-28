@@ -7,6 +7,8 @@ TagManager:
   - Target
   - emptyExplosions
   - FlameCollider
+  - explosiveObj
+  - Floor
   layers:
   - Default
   - TransparentFX

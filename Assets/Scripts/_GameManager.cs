@@ -23,7 +23,7 @@ public class _GameManager : MonoBehaviour {
     private static int _points;
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
-    public static Dictionary<Collider, DestructableObject> desObjDictionary = new Dictionary<Collider, DestructableObject>();
+    public static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
 	
 	void Start () {
         _points = 0;

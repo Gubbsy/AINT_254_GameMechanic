@@ -25,7 +25,6 @@ public class Explosive : MonoBehaviour
         thisObjCol = GetComponent<Collider>();
     }
 
-
     /// <summary>
     /// Detonate explosive detecting all objects in range and calling DestuctableObject to apply explosive force
     /// and damage to objects in range 
@@ -51,21 +50,12 @@ public class Explosive : MonoBehaviour
            
             if (_GameManager.desObjDictionary.ContainsKey(col))
             {
-                DestructableObject DO = _GameManager.desObjDictionary[col];
-                if (!DO._hasExploded)
+                IDestructable DO = _GameManager.desObjDictionary[col];
+                if (!DO.HasExploded())
                 {
                     DO.Exploded(power, _explosionPosition, radius, upForce, effect);
-                    try
-                    {
-                        DO.GetComponentInParent<KinematicTrigger>().disableKinematic();
-                    }
-                    catch
-                    {
-                        DO.disableKen();
-                    }
-                   
-                }
-                    
+                    DO.DisableKen();
+                }  
             }
         }
         gameObject.SetActive(false);

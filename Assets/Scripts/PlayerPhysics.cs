@@ -119,19 +119,4 @@ public class PlayerPhysics : MonoBehaviour {
                 _canGlide = false;
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        float contactVelocity;
-  
-        if (_GameManager.desObjDictionary.ContainsKey(collision.collider))
-        {
-            collision.rigidbody.isKinematic = false;
-            contactVelocity = _rigidbody.velocity.magnitude;
-            Debug.Log("Contact velocity: " + contactVelocity);
-            collision.gameObject.SendMessage("TakeDamage", contactVelocity);
-        }
-    }
-
-  
 }
