@@ -6,6 +6,9 @@ public class KinematicTrigger : MonoBehaviour {
 
     private Rigidbody _rb;
     private Transform _tran;
+    private GameObject[] childObjects;
+    [SerializeField]
+    private float _minVelocity = 3;
 
     private void Start()
     {
@@ -18,7 +21,9 @@ public class KinematicTrigger : MonoBehaviour {
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "explosiveObj")
+        float velocity = other.GetComponent<Rigidbody>().velocity.magnitude;
+
+        if ( velocity > _minVelocity)
         {
             disableKinematic();
         }

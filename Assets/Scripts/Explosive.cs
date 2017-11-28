@@ -55,7 +55,15 @@ public class Explosive : MonoBehaviour
                 if (!DO._hasExploded)
                 {
                     DO.Exploded(power, _explosionPosition, radius, upForce, effect);
-                    DO.GetComponentInParent<KinematicTrigger>().disableKinematic();
+                    try
+                    {
+                        DO.GetComponentInParent<KinematicTrigger>().disableKinematic();
+                    }
+                    catch
+                    {
+                        DO.disableKen();
+                    }
+                   
                 }
                     
             }

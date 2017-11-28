@@ -78,6 +78,13 @@ public class DestructableObject : MonoBehaviour {
         rend.material.color = Color.black;
     }
 
+    public void disableKen()
+    {
+        rb.isKinematic = false;
+    }
+
+
+
 
 
     public IEnumerator FireDamage()
