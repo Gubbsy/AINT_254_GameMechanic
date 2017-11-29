@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestructableObject : MonoBehaviour, IDestructable {
 
+
     [SerializeField]
     private int _objectHealth = 20;
 
@@ -14,7 +15,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     Rigidbody rb;
     ForceMode forceMode;
   
-    public bool _hasExploded;
+    private bool _hasExploded;
     private Explosive _explosive;
 
     [SerializeField]
@@ -33,14 +34,14 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Take damage and add points to Game Manager
     public void TakeDamage(int damageTaken)
     {
-  
-        Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
+        
+        //Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
 
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
 
-        Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
-        Debug.Log("Object: " + gameObject.name + "Points Given: " + _pointsGiven);
+        //Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
+        //Debug.Log("Object: " + gameObject.name + "Points Given: " + _pointsGiven);
 
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
@@ -87,7 +88,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
             float contactVelocity;
             contactVelocity = rb.velocity.magnitude;
-            Debug.Log("Contact velocity: " + contactVelocity);
+           // Debug.Log("Contact velocity: " + contactVelocity);
 
             TakeDamage((int)contactVelocity);
     }
@@ -106,6 +107,11 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public bool HasExploded()
     {
         return _hasExploded;
+    }
+
+    public bool isSettling()
+    {
+        return rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2;
     }
 }
 

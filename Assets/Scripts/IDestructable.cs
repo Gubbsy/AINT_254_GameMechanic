@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IDestructable{
 
+    bool isSettling();
     bool HasExploded();
     void Die();
     void TakeDamage(int damageTaken);

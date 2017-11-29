@@ -80,7 +80,6 @@ public class PlayerPhysics : MonoBehaviour {
            }
 
             _canGlide = true;
-            _GameManager.EndTurn();
         }
     }
 

@@ -12,7 +12,8 @@ public enum pickupTypes {
 public class _GameManager : MonoBehaviour {
 
     public  Slider glideBar;
-    public  GameObject scoreMenu;
+    public GameObject scoreMenu;
+    public static GameObject staticScoreMenu;
     public  Text pointText;
 
     private static float _glideValue;
@@ -21,11 +22,14 @@ public class _GameManager : MonoBehaviour {
     private static int _noFire;
     private static int _noExplosives;
     private static int _points;
+    
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
     public static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
 	
 	void Start () {
+        staticScoreMenu = scoreMenu;
+
         _points = 0;
 
         Time.timeScale = 1.0f;
@@ -47,25 +51,32 @@ public class _GameManager : MonoBehaviour {
                 desObjDictionary.Add(col, destScript);
             }
         }
+
+        InvokeRepeating("CheckForEnd", 8.0f, 1.0f);
     }
 	
 
 	void Update () {
-        pointText.text = _points.ToString();
         glideBar.value = _glideValue;
+    }
 
-        if (_endTimer)
+   
+    public void CheckForEnd()
+    {
+        foreach (KeyValuePair<Collider,IDestructable> pair in desObjDictionary)
         {
-            _endTurnTimer -= Time.deltaTime;
+            try
+            {
+                if (pair.Value.isSettling())
+                {
+                    Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+                    return;
+                }
+            }
+            catch { }
         }
 
-        if (_endTurnTimer < 0)
-        {
-            scoreMenu.SetActive(true);
-            _endTimer = false;
-        }
-            
-
+        EndTurn();
     }
 
     //Add points
@@ -119,8 +130,9 @@ public class _GameManager : MonoBehaviour {
     //End turn
     public static void EndTurn()
     {
-        Debug.Log("EndTurn Called");
-        _endTimer = true;
+        Debug.Log("End turn called");
+        Time.timeScale = 0.0f;
+        staticScoreMenu.SetActive(true);
     }
 
     //Reset Level

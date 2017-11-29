@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: timber_1_fixed_dark
+  m_Name: timber_1_fixed_dark 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.27205884, g: 0.22802173, b: 0.18804067, a: 1}
+    - _Color: {r: 0.875, g: 0.18014708, b: 0.18014708, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
