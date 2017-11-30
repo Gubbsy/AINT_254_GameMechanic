@@ -21,6 +21,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     [SerializeField]
     Rigidbody[] structualDepen;
 
+    KinematicTrigger ken;
+
+    
+
 
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
@@ -29,6 +33,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         forceMode = ForceMode.Impulse;
 
         _explosive = gameObject.GetComponent<Explosive>();
+        ken = GetComponentInParent<KinematicTrigger>();
     }
 
     //Take damage and add points to Game Manager
@@ -62,6 +67,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         }
         else
             gameObject.SetActive(false);
+
+        //ken.disableKinematic();
+
+
     }
 
     //Each destructable object handles there own force and damage respectivley. 
@@ -88,8 +97,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
             float contactVelocity;
             contactVelocity = rb.velocity.magnitude;
-           // Debug.Log("Contact velocity: " + contactVelocity);
-
             TakeDamage((int)contactVelocity);
     }
 

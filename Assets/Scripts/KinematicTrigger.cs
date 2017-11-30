@@ -13,6 +13,8 @@ public class KinematicTrigger : MonoBehaviour {
     private void Start()
     {
         _tran = gameObject.transform;
+        //childObjects = new GameObject[_tran.childCount];
+        //childObjects = _tran.GetComponentsInChildren<GameObject>();
     }
 
     /// <summary>

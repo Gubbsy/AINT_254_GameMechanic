@@ -58,6 +58,7 @@ public class _GameManager : MonoBehaviour {
 
 	void Update () {
         glideBar.value = _glideValue;
+        pointText.text = _points.ToString();
     }
 
    
