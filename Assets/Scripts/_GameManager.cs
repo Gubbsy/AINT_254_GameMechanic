@@ -51,10 +51,13 @@ public class _GameManager : MonoBehaviour {
                 desObjDictionary.Add(col, destScript);
             }
         }
-
-        InvokeRepeating("CheckForEnd", 8.0f, 1.0f);
     }
-	
+
+
+    public void EndInvoker()
+    {
+        InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
+    }
 
 	void Update () {
         glideBar.value = _glideValue;

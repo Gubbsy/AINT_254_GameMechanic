@@ -8,6 +8,8 @@ public class PlayerPhysics : MonoBehaviour {
     [SerializeField]
     private GameObject _dot;
 
+    private int collisions;
+
 
     public float _forceValue;
     private GameObject[] _dotLine;
@@ -17,6 +19,7 @@ public class PlayerPhysics : MonoBehaviour {
     private bool _canGlide = false;
     private float _glideValue;
     private Vector3 _glideForceIntensity;
+    [SerializeField]
     private _GameManager _GM;
    
 
@@ -118,4 +121,12 @@ public class PlayerPhysics : MonoBehaviour {
                 _canGlide = false;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        collisions++;
+        if (collisions == 2)
+            _GM.EndInvoker();
+    }
+
 }

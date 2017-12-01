@@ -18,10 +18,12 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     private bool _hasExploded;
     private Explosive _explosive;
 
+    private bool _isOnFire;
+
     [SerializeField]
     Rigidbody[] structualDepen;
 
-    KinematicTrigger ken;
+    //KinematicTrigger ken;
 
     
 
@@ -33,7 +35,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         forceMode = ForceMode.Impulse;
 
         _explosive = gameObject.GetComponent<Explosive>();
-        ken = GetComponentInParent<KinematicTrigger>();
+        //ken = GetComponentInParent<KinematicTrigger>();
     }
 
     //Take damage and add points to Game Manager
@@ -70,6 +72,8 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
         //ken.disableKinematic();
 
+        _GameManager.desObjDictionary.Remove(gameObject.GetComponent<Collider>());
+
 
     }
 
@@ -86,6 +90,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         StartCoroutine(FireDamage());
         Renderer rend = GetComponent<Renderer>();
         rend.material.color = Color.black;
+        _isOnFire = true;
     }
 
     public void DisableKen()
@@ -109,6 +114,8 @@ public class DestructableObject : MonoBehaviour, IDestructable {
             TakeDamage(2);
             yield return new WaitForSeconds(0.5f);
         }
+
+        _isOnFire = false;
     }
 
     public bool HasExploded()
@@ -118,7 +125,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     public bool isSettling()
     {
-        return rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2;
+            return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
     }
 }
 
