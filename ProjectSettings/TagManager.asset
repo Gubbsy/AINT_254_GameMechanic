@@ -9,6 +9,7 @@ TagManager:
   - FlameCollider
   - explosiveObj
   - Floor
+  - IgnorePos
   layers:
   - Default
   - TransparentFX

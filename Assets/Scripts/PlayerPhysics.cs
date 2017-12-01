@@ -21,6 +21,8 @@ public class PlayerPhysics : MonoBehaviour {
     private Vector3 _glideForceIntensity;
     [SerializeField]
     private _GameManager _GM;
+    [SerializeField]
+    Camera mainCam;
    
 
 
@@ -59,7 +61,7 @@ public class PlayerPhysics : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
          
-            Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
+            Vector3 characterPosition = mainCam.WorldToScreenPoint(_transform.position);
             characterPosition.z = 0;
 
             _direction = (characterPosition - Input.mousePosition).normalized ;
