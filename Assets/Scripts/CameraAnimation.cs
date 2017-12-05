@@ -8,14 +8,14 @@ public class CameraAnimation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.SetActive(false);
+       // player = GameObject.FindGameObjectWithTag("Player");
+        //player.SetActive(false);
 	}
 	
 	
     public void endAnimation()
     {
-        player.SetActive(true);
+       // player.SetActive(true);
     }
 	
 }

@@ -18,7 +18,6 @@ public class _GameManager : MonoBehaviour {
 
     private static float _glideValue;
     private static bool _endTimer;
-    private static float _endTurnTimer;
     private static int _noFire;
     private static int _noExplosives;
     private static int _points;
@@ -35,7 +34,6 @@ public class _GameManager : MonoBehaviour {
         Time.timeScale = 1.0f;
 
         scoreMenu.SetActive(false);
-        _endTurnTimer = 7;
         _glideValue = 40;
         
 
