@@ -87,12 +87,15 @@ public class _GameManager : MonoBehaviour {
             Debug.Log(position);
         }
 
-
-
         StartCoroutine(cameraSlerp());
-
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(cameraPathBounds[0], cameraPathBounds[2]);
+        Gizmos.DrawLine(cameraPathBounds[1], cameraPathBounds[3]);
+    }
+
     IEnumerator cameraSlerp()
     {        
         Vector3 previousPos = startingPosition;
@@ -100,7 +103,7 @@ public class _GameManager : MonoBehaviour {
         {            
             for (float i = 0.0f; i < 1.0f; i += Time.deltaTime)
             {
-                mainCam.transform.LookAt(new Vector3(cameraPathBounds[0].x - cameraPathBounds[2].x, 0, cameraPathBounds[1].z - cameraPathBounds[3].z));
+                mainCam.transform.LookAt(new Vector3(cameraPathBounds[0].x + (cameraPathBounds[0].x - cameraPathBounds[2].x)/2, 0, cameraPathBounds[1].x + (cameraPathBounds[1].z - cameraPathBounds[3].z)/2));
                 
                 mainCam.transform.position = Vector3.Slerp(previousPos, cameraPathBounds[nextIndex], i);
                 yield return new WaitForSeconds(0.05f);
@@ -121,6 +124,8 @@ public class _GameManager : MonoBehaviour {
             cameraPathBounds[1] = gameObj.transform.position + new Vector3(0f, 5f, 2f);
         if (gameObj.transform.position.z < cameraPathBounds[3].z)
             cameraPathBounds[3] = gameObj.transform.position + new Vector3(0f, 5f, -2f);
+
+
     }
 
     public void EndInvoker()
