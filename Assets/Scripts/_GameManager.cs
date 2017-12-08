@@ -16,11 +16,17 @@ public class _GameManager : MonoBehaviour {
     public static GameObject staticScoreMenu;
     public  Text pointText;
 
+    [SerializeField]
+    private GameObject[] _levels;
+    private int _currentLevel = 0;
+
     private static float _glideValue;
     private static bool _endTimer;
     private static int _noFire;
     private static int _noExplosives;
     private static int _points;
+
+    public static List<Resetable> _resetables = new List<Resetable>();
     
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
@@ -29,14 +35,7 @@ public class _GameManager : MonoBehaviour {
 	void Start () {
         staticScoreMenu = scoreMenu;
 
-        _points = 0;
-
-        Time.timeScale = 1.0f;
-
-        scoreMenu.SetActive(false);
-        _glideValue = 40;
-        
-
+        StartLevel();
         //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
         // Destructable GameObject Script 
         foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())     
@@ -49,6 +48,18 @@ public class _GameManager : MonoBehaviour {
                 desObjDictionary.Add(col, destScript);
             }
         }
+    }
+
+    public void StartLevel()
+    {
+        _levels[_currentLevel].SetActive(true);
+        _points = 0;
+
+        Time.timeScale = 1.0f;
+
+        scoreMenu.SetActive(false);
+        _glideValue = 40;
+
     }
 
 
@@ -77,8 +88,7 @@ public class _GameManager : MonoBehaviour {
             }
             catch { }
         }
-
-        EndTurn();
+        Invoke("EndTurn", 2f); //EndTurn();
     }
 
     //Add points
@@ -130,7 +140,7 @@ public class _GameManager : MonoBehaviour {
     }
 
     //End turn
-    public static void EndTurn()
+    public void EndTurn()
     {
         Debug.Log("End turn called");
         Time.timeScale = 0.0f;
@@ -140,7 +150,11 @@ public class _GameManager : MonoBehaviour {
     //Reset Level
     public void ResetLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        for (int i = 0; i < _resetables.Count; i++)
+        {
+            _resetables[i].Revert();
+        }
+        StartLevel();
     }
 
 }

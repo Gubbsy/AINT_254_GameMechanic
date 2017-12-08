@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 136353741861586174}
   - component: {fileID: 114670739836795886}
   - component: {fileID: 114131853959652840}
+  - component: {fileID: 135713957391365940}
   m_Layer: 0
   m_Name: Explosive Barrel 1
   m_TagString: explosiveObj
@@ -38,8 +39,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014406136250162}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.15, y: -0.089999974, z: -7.251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -32.93, y: 0.24, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,8 +59,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 79b6bc15374199f4c90b61b8c09d3d4a, type: 2}
-  - {fileID: 2100000, guid: 13ceee64ceec99b4c83bc82e593822e9, type: 2}
+  - {fileID: 2100000, guid: d46f3ebcf9d2c5b4781ecc0eff63b527, type: 2}
+  - {fileID: 2100000, guid: a75431e4d9fc25a429bcea7d1ec1fa22, type: 2}
   - {fileID: 2100000, guid: 92c80c0d26945b34a9d0c7d295afeb60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -113,10 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1627342551697604, guid: be631888a6b76a14b8160c3e286e9a6d, type: 2}
-  power: 40
+  power: 50
   radius: 15
-  upForce: 5
+  upForce: 10
   damageRequired: 7
+  radiusCollider: {fileID: 135713957391365940}
 --- !u!114 &114670739836795886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,10 +130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 10
-  _pointsMuliplier: 0
-  _hasExploded: 0
+  _objectHealth: 1
+  _pointsMuliplier: 1
   structualDepen: []
+--- !u!135 &135713957391365940
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014406136250162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0.68785805, z: 0}
 --- !u!136 &136353741861586174
 CapsuleCollider:
   m_ObjectHideFlags: 1

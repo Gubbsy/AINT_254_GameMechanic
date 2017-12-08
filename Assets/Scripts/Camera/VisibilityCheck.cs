@@ -16,9 +16,4 @@ public class VisibilityCheck : MonoBehaviour {
         _isRendered = false;
     }
 
-    private void Update()
-    {
-        Debug.Log(gameObject.name + ": " + _isRendered);
-    }
-
 }

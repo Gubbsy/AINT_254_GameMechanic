@@ -8,7 +8,7 @@ public class PlayerPhysics : MonoBehaviour {
     [SerializeField]
     private GameObject _dot;
 
-    private int collisions;
+    public int collisions;
 
 
     public float _forceValue;
@@ -47,7 +47,8 @@ public class PlayerPhysics : MonoBehaviour {
 	
 
 	void Update () {
-        
+
+        Debug.Log("Timestep: " + Time.timeScale);
         float forceInX;
         float forceInY;
 

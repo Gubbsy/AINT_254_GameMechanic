@@ -6,7 +6,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
 
     [SerializeField]
-    private int _objectHealth = 20;
+    public int _ObjectHealth { get; set; }
 
     [SerializeField]
     private int _pointsMuliplier; 
@@ -31,6 +31,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
+        _ObjectHealth = 20;
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
 
@@ -44,7 +45,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         
         //Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
 
-        _objectHealth -= damageTaken;
+        _ObjectHealth -= damageTaken;
         _pointsGiven = damageTaken;
 
         //Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
@@ -53,7 +54,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
         // if health is below zero then die
-        if (_objectHealth < 0)
+        if (_ObjectHealth < 0)
         {
             Die();
         }
@@ -125,7 +126,9 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     public bool isSettling()
     {
+        Debug.Log(gameObject.name + " : " + rb.velocity.magnitude);
             return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
+       
     }
 }
 
