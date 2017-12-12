@@ -55,7 +55,7 @@ public class FireBreathing : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (_GameManager.desObjDictionary.ContainsKey(other))
-            _GameManager.desObjDictionary[other].TakeFireDamage();
+            _GameManager.desObjDictionar[][other].TakeFireDamage();
     }
 
     

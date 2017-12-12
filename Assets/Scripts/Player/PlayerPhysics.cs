@@ -10,7 +10,6 @@ public class PlayerPhysics : MonoBehaviour {
 
     public int collisions;
 
-
     public float _forceValue;
     private GameObject[] _dotLine;
     private Transform _transform;
@@ -42,7 +41,6 @@ public class PlayerPhysics : MonoBehaviour {
             tempObj.SetActive(false);
             _dotLine[i] = tempObj;
         }
-
 	}
 	
 

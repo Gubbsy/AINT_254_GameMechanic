@@ -21,16 +21,14 @@ public class _GameManager : MonoBehaviour {
     private int _currentLevel = 0;
 
     private static float _glideValue;
-    private static bool _endTimer;
     private static int _noFire;
-    private static int _noExplosives;
+
     private static int _points;
 
     public static List<Resetable> _resetables = new List<Resetable>();
     
 
-    //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
-    public static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
+    
 	
 	void Start () {
         staticScoreMenu = scoreMenu;
