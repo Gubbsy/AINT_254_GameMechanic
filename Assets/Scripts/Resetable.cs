@@ -11,6 +11,7 @@ public class Resetable : MonoBehaviour
     private int _health;
     private bool _isKin;
     private Color _color;
+
     
 
     Transform _transform;
@@ -19,6 +20,7 @@ public class Resetable : MonoBehaviour
     DestructableObject _do;
     PlayerPhysics _playerPhysics;
     Renderer _ren;
+    FireBreathing _fireBreathing;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class Resetable : MonoBehaviour
         _do = GetComponent<DestructableObject>();
         _ren = GetComponent<Renderer>();
         _playerPhysics = GetComponent<PlayerPhysics>();
+        _fireBreathing = GetComponent<FireBreathing>(); 
         Track();
 
         _GameManager._resetables.Add(this);
@@ -55,6 +58,13 @@ public class Resetable : MonoBehaviour
 
         if (_playerPhysics != null)
             _playerPhysics.collisions = 0;
+
+        
+
+
+        _GameManager.Single().CancelInvoke("EndTurn");
+        _GameManager.Single().CancelInvoke("EndInvoker");
+        _GameManager.Single().CancelInvoke("CheckForEnd");
     }
 
     public void Track()

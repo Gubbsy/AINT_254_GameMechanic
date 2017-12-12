@@ -21,7 +21,7 @@ public class ScoreMenu : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
-        _points = _GameManager.GetPoints();
+        _points = GameDataModel.Points;
         score.text = _points.ToString();
 
         if (_points < _bronzeLevel)

@@ -7,13 +7,12 @@ public class GameDataModel {
 
     private static int _numberFirePU;
     private static int _points;
-    private static int _glideValue;
+    private static float _glideValue;
     private static bool _playMode;
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
-    private Dictionary<Collider, IDestructable> desObjDictionary;// = new Dictionary<Collider, IDestructable>();
+    private static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
 
-   
 
     public static int NumberFirePU
     {
@@ -27,7 +26,7 @@ public class GameDataModel {
         set{_points = value;}
     }
 
-    public static int GlideValue
+    public static float GlideValue
     {
         get { return _glideValue; }
         set { _glideValue = value; }
@@ -36,6 +35,14 @@ public class GameDataModel {
    public static bool PlayMode
     {
         get {return _playMode;}
-        set {PlayMode = value;}
+        set { _playMode = value;}
+    }
+
+    public static Dictionary<Collider, IDestructable> DesObjDictionary
+    {
+        get
+        {
+            return desObjDictionary;
+        }
     }
 }

@@ -16,7 +16,6 @@ public class PlayerPhysics : MonoBehaviour {
     private Vector3 _direction;
     private Rigidbody _rigidbody;
     private bool _canGlide = false;
-    private float _glideValue;
     private Vector3 _glideForceIntensity;
     [SerializeField]
     private _GameManager _GM;
@@ -31,7 +30,7 @@ public class PlayerPhysics : MonoBehaviour {
         _rigidbody = GetComponent<Rigidbody>();
 
         _dotLine = new GameObject[10];
-        _glideValue = 40;
+
 
 
         //Fill array with dot gameObjects and set them to false
@@ -46,43 +45,46 @@ public class PlayerPhysics : MonoBehaviour {
 
 	void Update () {
 
-        Debug.Log("Timestep: " + Time.timeScale);
-        float forceInX;
-        float forceInY;
-
-        _GameManager.UpdateGlide(_glideValue);
-
-        if (_canGlide)
-            Glide();
-
-        if (Input.GetMouseButton(0))
+        if (GameDataModel.PlayMode == true)
         {
-         
-            Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
-            characterPosition.z = 0;
+            float forceInX;
+            float forceInY;
 
-            _direction = (characterPosition - Input.mousePosition).normalized ;
+            if (_canGlide)
+                Glide();
 
-            forceInX = (characterPosition.x - Input.mousePosition.x);
-            forceInY = (characterPosition.y - Input.mousePosition.y);
+            if (Input.GetMouseButton(0))
+            {
 
-            _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
-           
-            Aim();
+                Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
+                characterPosition.z = 0;
+
+                _direction = (characterPosition - Input.mousePosition).normalized;
+
+                forceInX = (characterPosition.x - Input.mousePosition.x);
+                forceInY = (characterPosition.y - Input.mousePosition.y);
+
+                _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
+
+                Aim();
+            }
+
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _rigidbody.velocity = _direction * _forceValue;
+
+                for (int i = 0; i < _dotLine.Length; i++)
+                {
+                    _dotLine[i].SetActive(false);
+                }
+
+                _canGlide = true;
+            }
         }
-
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            _rigidbody.velocity = _direction * _forceValue;
-            
-           for (int i = 0; i < _dotLine.Length; i++)
-           {
-               _dotLine[i].SetActive(false);
-           }
-
-            _canGlide = true;
-        }
+        else
+            return;
+        
     }
 
     private void Aim()
@@ -103,20 +105,26 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        _rigidbody.AddForce(_glideForceIntensity);
-        _glideForceIntensity.x = 0;
+        if (GameDataModel.PlayMode == true)
+        {
+            _rigidbody.AddForce(_glideForceIntensity);
+            _glideForceIntensity.x = 0;
+        }
+        else
+            return;
+       
     }
 
     private void Glide()
     {
-        _glideForceIntensity = new Vector3(_glideValue, 0, 0);
+        _glideForceIntensity = new Vector3(GameDataModel.GlideValue, 0, 0);
         _glideForceIntensity *= Input.GetAxis("Horizontal");
 
         if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("Horizontal") > 0)
         {
-            _glideValue -= 0.5f;
+            GameDataModel.GlideValue -= 0.5f;
 
-            if (_glideValue == 0)
+            if (GameDataModel.GlideValue == 0)
                 _canGlide = false;
         }
     }
@@ -124,8 +132,13 @@ public class PlayerPhysics : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         collisions++;
-        if (collisions == 2)
+        if (collisions == 1)
+            GameDataModel.PlayMode = true;
+        if (collisions == 2) {
             _GM.EndInvoker();
+            Debug.Log("Collison: " + collisions);
+        }
+            
     }
 
 }

@@ -73,7 +73,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
         //ken.disableKinematic();
 
-        _GameManager.desObjDictionary.Remove(gameObject.GetComponent<Collider>());
+        GameDataModel.DesObjDictionary.Remove(gameObject.GetComponent<Collider>());
 
 
     }
@@ -126,7 +126,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     public bool isSettling()
     {
-        Debug.Log(gameObject.name + " : " + rb.velocity.magnitude);
+       // Debug.Log(gameObject.name + " : " + rb.velocity.magnitude);
             return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
        
     }

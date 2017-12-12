@@ -11,6 +11,23 @@ public enum pickupTypes {
 
 public class _GameManager : MonoBehaviour {
 
+    private static _GameManager singleton;
+
+    public _GameManager()
+    {
+        if (singleton != null)
+            throw new System.Exception("You can only have one _Gamemanager object! Remove one instance");
+
+        singleton = this;
+    }
+
+    public static _GameManager Single()
+    {
+        return singleton;
+    }
+
+    ////////////////
+
     public  Slider glideBar;
     public GameObject scoreMenu;
     public static GameObject staticScoreMenu;
@@ -18,22 +35,18 @@ public class _GameManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject[] _levels;
+
     private int _currentLevel = 0;
 
-    private static float _glideValue;
-    private static int _noFire;
-
-    private static int _points;
-
     public static List<Resetable> _resetables = new List<Resetable>();
-    
 
-    
+
 	
 	void Start () {
         staticScoreMenu = scoreMenu;
 
         StartLevel();
+
         //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
         // Destructable GameObject Script 
         foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())     
@@ -43,7 +56,7 @@ public class _GameManager : MonoBehaviour {
 
             if (col != null && destScript != null)
             {
-                desObjDictionary.Add(col, destScript);
+                GameDataModel.DesObjDictionary.Add(col, destScript);
             }
         }
     }
@@ -51,13 +64,10 @@ public class _GameManager : MonoBehaviour {
     public void StartLevel()
     {
         _levels[_currentLevel].SetActive(true);
-        _points = 0;
-
+        GameDataModel.Points = 0;
         Time.timeScale = 1.0f;
-
         scoreMenu.SetActive(false);
-        _glideValue = 40;
-
+        GameDataModel.GlideValue = 40;
     }
 
 
@@ -67,20 +77,20 @@ public class _GameManager : MonoBehaviour {
     }
 
 	void Update () {
-        glideBar.value = _glideValue;
-        pointText.text = _points.ToString();
+        glideBar.value = GameDataModel.GlideValue;
+        pointText.text = GameDataModel.Points.ToString(); 
     }
 
    
     public void CheckForEnd()
     {
-        foreach (KeyValuePair<Collider,IDestructable> pair in desObjDictionary)
+        foreach (KeyValuePair<Collider,IDestructable> pair in GameDataModel.DesObjDictionary)
         {
             try
             {
                 if (pair.Value.isSettling())
                 {
-                    Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+                    //Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
                     return;
                 }
             }
@@ -92,14 +102,9 @@ public class _GameManager : MonoBehaviour {
     //Add points
     public static void AddPoints(int pointsAdded)
     {
-        _points += pointsAdded;
+        GameDataModel.Points += pointsAdded;
     }
 
-    //Update glide value to that used
-    public static void UpdateGlide(float glide)
-    {
-        _glideValue = glide;
-    }
 
     //Add/Remove pick-ups based on enuma and bool input
     public static void QuantPickUp(pickupTypes type, bool isAdding)
@@ -108,15 +113,15 @@ public class _GameManager : MonoBehaviour {
             switch (type)
             {
                 case pickupTypes.Fire:
-                    _noFire += 1;
+                    GameDataModel.NumberFirePU += 1;
                     break;
             }
         else
             switch (type)
             {
                 case pickupTypes.Fire:
-                    if (_noFire > 0)
-                        _noFire -= 1;
+                    if (GameDataModel.NumberFirePU > 0)
+                        GameDataModel.NumberFirePU -= 1;
                     break;
             }
     }
@@ -125,17 +130,12 @@ public class _GameManager : MonoBehaviour {
     public static int GetPickUp(pickupTypes type)
     {
         if (type == pickupTypes.Fire)
-            return _noFire;
+            return GameDataModel.NumberFirePU;
 
         else
             return -1;
     }
 
-    //Get points 
-    public static int GetPoints()
-    {
-        return _points;
-    }
 
     //End turn
     public void EndTurn()
@@ -143,16 +143,20 @@ public class _GameManager : MonoBehaviour {
         Debug.Log("End turn called");
         Time.timeScale = 0.0f;
         staticScoreMenu.SetActive(true);
+        GameDataModel.PlayMode = false;
+        Debug.Log("Playmode val: " + GameDataModel.PlayMode);
     }
 
     //Reset Level
-    public void ResetLevel()
+    public  void ResetLevel()
     {
         for (int i = 0; i < _resetables.Count; i++)
         {
             _resetables[i].Revert();
         }
+
         StartLevel();
+        Debug.Log("Playmode val: " + GameDataModel.PlayMode);
     }
 
 }

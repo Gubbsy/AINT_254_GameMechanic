@@ -27,35 +27,43 @@ public class FireBreathing : MonoBehaviour {
     /// </summary>
      void Update()
     {
-        _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
-
-        if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
+        if (GameDataModel.PlayMode == true)
         {
-            _flameOn = true;
-          
-        }
+            _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
 
-        if (_flameOn == true)
-        {
-            _flames.SetActive(true);
-            flameTime -= Time.deltaTime;
-            _GameManager.QuantPickUp(pickupTypes.Fire, false);
-            if (flameTime < 0)
-                _flameOn = false;
+            if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
+            {
+                _flameOn = true;
+
+            }
+
+            if (_flameOn == true)
+            {
+                _flames.SetActive(true);
+                flameTime -= Time.deltaTime;
+                _GameManager.QuantPickUp(pickupTypes.Fire, false);
+                if (flameTime < 0)
+                    _flameOn = false;
+            }
+            else
+            {
+                _flames.SetActive(false);
+                flameTime = 1.5f;
+            }
         }
         else
         {
             _flames.SetActive(false);
-            flameTime = 1.5f;
         }
+           
     }
 
     // On collison with flames, and object is in destObjDictionary,
     // take fire damage.
     private void OnTriggerEnter(Collider other)
     {
-        if (_GameManager.desObjDictionary.ContainsKey(other))
-            _GameManager.desObjDictionar[][other].TakeFireDamage();
+        if (GameDataModel.DesObjDictionary.ContainsKey(other))
+            GameDataModel.DesObjDictionary[other].TakeFireDamage();
     }
 
     

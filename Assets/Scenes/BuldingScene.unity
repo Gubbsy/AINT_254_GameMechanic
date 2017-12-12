@@ -211,11 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785576aa869a7264696a45342d609c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &185180042 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1276983049687680, guid: a411bd9911a2fae438f42902ca583346,
-    type: 2}
-  m_PrefabInternal: {fileID: 469754976}
 --- !u!1 &210580442
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +616,6 @@ MonoBehaviour:
   pointText: {fileID: 1736263911}
   _levels:
   - {fileID: 988854539}
-  - {fileID: 185180042}
 --- !u!1001 &365557433
 Prefab:
   m_ObjectHideFlags: 0
@@ -688,6 +682,10 @@ Prefab:
     - target: {fileID: 4000222085312006, guid: 9f9b255639ea3634aa49e7f667381d6a, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000222085312006, guid: 9f9b255639ea3634aa49e7f667381d6a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -29.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f9b255639ea3634aa49e7f667381d6a, type: 2}

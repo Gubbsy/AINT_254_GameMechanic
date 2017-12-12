@@ -33,8 +33,4 @@ public class DictionaryDataModel {
         return returnVal;
     }
 
-    private void LoopDictionary()
-    {
-
-    }
 }

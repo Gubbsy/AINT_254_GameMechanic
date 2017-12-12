@@ -48,9 +48,9 @@ public class Explosive : MonoBehaviour
             float proximity = (_explosionPosition - col.transform.position).magnitude;
             float effect = 1 - (proximity / radius);
            
-            if (_GameManager.desObjDictionary.ContainsKey(col))
+            if (GameDataModel.DesObjDictionary.ContainsKey(col))
             {
-                IDestructable DO = _GameManager.desObjDictionary[col];
+                IDestructable DO = GameDataModel.DesObjDictionary[col];
                 if (!DO.HasExploded())
                 {
                     DO.Exploded(power, _explosionPosition, radius, upForce, effect);
