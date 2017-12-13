@@ -20,8 +20,14 @@ public class CameraRig : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         _camStartPos = _camTrans.position;
+        GameDataModel.CamRigList.Add(this);
+    }
+
+    public void StartCamPan()
+    {
         StartCoroutine(cameraSlerp());
     }
 	

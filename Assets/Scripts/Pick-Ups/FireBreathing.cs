@@ -7,9 +7,9 @@ public class FireBreathing : MonoBehaviour {
     private GameObject _flames;
     private GameObject _damagedObj;
     private int _noFire;
-    
+
     [SerializeField]
-    float flameTime = 1.5f;
+    public float flameTime { set; get; }
 
     private bool _flameOn;
 
@@ -34,8 +34,6 @@ public class FireBreathing : MonoBehaviour {
             if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
             {
                 _flameOn = true;
-                Debug.Log("E pressed, fire should breath");
-
             }
 
             if (_flameOn == true)

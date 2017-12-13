@@ -11,11 +11,12 @@ public class GameDataModel {
         Fire,
     }
 
-
     private static int _numberFirePU;
     private static int _points;
     private static float _glideValue;
     private static bool _playMode;
+
+    private static List<CameraRig> _camRigList = new List<CameraRig>();
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
     private static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
@@ -37,6 +38,11 @@ public class GameDataModel {
     {
         get {return _playMode;}
         set { _playMode = value;}
+    }
+
+    public static List<CameraRig> CamRigList
+    {
+        get { return _camRigList; }
     }
 
     //Add/Remove pick-ups based on enuma and bool input

@@ -6,7 +6,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
 
     [SerializeField]
-    public int _ObjectHealth { get; set; }
+    public int _objectHealth;
 
     [SerializeField]
     private int _pointsMuliplier; 
@@ -23,18 +23,12 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     [SerializeField]
     Rigidbody[] structualDepen;
 
-    //KinematicTrigger ken;
-
-    
-
 
     //Get refernce for GameManager Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
-        _ObjectHealth = 20;
         rb = GetComponent<Rigidbody>();
         forceMode = ForceMode.Impulse;
-
         _explosive = gameObject.GetComponent<Explosive>();
         //ken = GetComponentInParent<KinematicTrigger>();
     }
@@ -45,7 +39,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         
         //Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
 
-        _ObjectHealth -= damageTaken;
+        _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
 
         //Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
@@ -54,7 +48,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
         // if health is below zero then die
-        if (_ObjectHealth < 0)
+        if (_objectHealth < 0)
         {
             Die();
         }
@@ -70,8 +64,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         }
         else
             gameObject.SetActive(false);
-
-        //ken.disableKinematic();
 
         GameDataModel.DesObjDictionary.Remove(gameObject.GetComponent<Collider>());
 
@@ -114,6 +106,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         {
             TakeDamage(2);
             yield return new WaitForSeconds(0.5f);
+            Debug.Log("Taking fire damage");
         }
 
         _isOnFire = false;
@@ -126,7 +119,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     public bool isSettling()
     {
-       // Debug.Log(gameObject.name + " : " + rb.velocity.magnitude);
             return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
        
     }

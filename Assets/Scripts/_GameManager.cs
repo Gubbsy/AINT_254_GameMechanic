@@ -9,6 +9,19 @@ public class _GameManager : MonoBehaviour {
 
     private static _GameManager singleton;
 
+    public Slider glideBar;
+    public GameObject scoreMenu;
+    public static GameObject staticScoreMenu;
+    public Text pointText;
+
+    [SerializeField]
+    private GameObject[] _levels;
+
+    private int _currentLevel = 0;
+
+    public static List<Resetable> _resetables = new List<Resetable>();
+
+
     public _GameManager()
     {
         if (singleton != null)
@@ -22,22 +35,7 @@ public class _GameManager : MonoBehaviour {
         return singleton;
     }
 
-    ////////////////
 
-    public  Slider glideBar;
-    public GameObject scoreMenu;
-    public static GameObject staticScoreMenu;
-    public  Text pointText;
-
-    [SerializeField]
-    private GameObject[] _levels;
-
-    private int _currentLevel = 0;
-
-    public static List<Resetable> _resetables = new List<Resetable>();
-
-
-	
 	void Start () {
         staticScoreMenu = scoreMenu;
 
@@ -59,6 +57,12 @@ public class _GameManager : MonoBehaviour {
 
     public void StartLevel()
     {
+        foreach (CameraRig c in GameDataModel.CamRigList)
+        {
+            if (c.isActiveAndEnabled)
+                c.StartCamPan();
+        }
+
         _levels[_currentLevel].SetActive(true);
         GameDataModel.Points = 0;
         Time.timeScale = 1.0f;

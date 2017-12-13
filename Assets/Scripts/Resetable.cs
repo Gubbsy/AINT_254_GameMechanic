@@ -22,7 +22,8 @@ public class Resetable : MonoBehaviour
     Renderer _ren;
     FireBreathing _fireBreathing;
 
-    private void Start()
+  
+    private void Awake()
     {
         _gameObject = gameObject;
         _transform = GetComponent<Transform>();
@@ -48,21 +49,25 @@ public class Resetable : MonoBehaviour
         {
             _rb.isKinematic = _isKin;
             _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
         }
 
         if (_do != null)
-            _do._ObjectHealth = _health;
+        {
+            _do._objectHealth = _health;
 
+        }
+            
         if (_ren != null)
             _ren.material.color = _color;
 
         if (_playerPhysics != null)
             _playerPhysics.collisions = 0;
 
+        if (_fireBreathing != null)
+            _fireBreathing.flameTime = 1.5f;
+
         GameDataModel.SetPickUpVal(GameDataModel.pickupTypes.Fire, 0);
-
-        
-
 
         _GameManager.Single().CancelInvoke("EndTurn");
         _GameManager.Single().CancelInvoke("EndInvoker");
@@ -77,10 +82,18 @@ public class Resetable : MonoBehaviour
         _active = _gameObject.activeInHierarchy;
 
         if (_rb != null)
+        {
             _isKin = _rb.isKinematic;
+            _rb.angularVelocity = new Vector3(0,0,0);
+        }
+            
 
         if (_do != null)
-            _health = _do._ObjectHealth;
+        {
+            _health = _do._objectHealth;
+ 
+        }
+           
 
         if (_ren != null)
             if (_ren.material.HasProperty("_Color"))
