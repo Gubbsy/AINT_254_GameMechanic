@@ -7,7 +7,7 @@ public class FirePickUp : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        _GameManager.QuantPickUp(pickupTypes.Fire, true);
+        GameDataModel.QuantPickUp(GameDataModel.pickupTypes.Fire, true);
         gameObject.SetActive(false);
     }
 }

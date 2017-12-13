@@ -59,6 +59,8 @@ public class Resetable : MonoBehaviour
         if (_playerPhysics != null)
             _playerPhysics.collisions = 0;
 
+        GameDataModel.SetPickUpVal(GameDataModel.pickupTypes.Fire, 0);
+
         
 
 

@@ -29,11 +29,12 @@ public class FireBreathing : MonoBehaviour {
     {
         if (GameDataModel.PlayMode == true)
         {
-            _noFire = _GameManager.GetPickUp(pickupTypes.Fire);
+            _noFire = GameDataModel.GetPickUp(GameDataModel.pickupTypes.Fire);
 
             if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
             {
                 _flameOn = true;
+                Debug.Log("E pressed, fire should breath");
 
             }
 
@@ -41,7 +42,7 @@ public class FireBreathing : MonoBehaviour {
             {
                 _flames.SetActive(true);
                 flameTime -= Time.deltaTime;
-                _GameManager.QuantPickUp(pickupTypes.Fire, false);
+                GameDataModel.QuantPickUp(GameDataModel.pickupTypes.Fire, false);
                 if (flameTime < 0)
                     _flameOn = false;
             }

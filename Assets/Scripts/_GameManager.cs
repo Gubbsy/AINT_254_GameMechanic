@@ -4,10 +4,6 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Enum for pick-ups (alows for addition at later date)
-public enum pickupTypes {
-    Fire,
-}
 
 public class _GameManager : MonoBehaviour {
 
@@ -105,46 +101,12 @@ public class _GameManager : MonoBehaviour {
         GameDataModel.Points += pointsAdded;
     }
 
-
-    //Add/Remove pick-ups based on enuma and bool input
-    public static void QuantPickUp(pickupTypes type, bool isAdding)
-    {
-        if (isAdding)
-            switch (type)
-            {
-                case pickupTypes.Fire:
-                    GameDataModel.NumberFirePU += 1;
-                    break;
-            }
-        else
-            switch (type)
-            {
-                case pickupTypes.Fire:
-                    if (GameDataModel.NumberFirePU > 0)
-                        GameDataModel.NumberFirePU -= 1;
-                    break;
-            }
-    }
-
-    //Return number of pick-ups
-    public static int GetPickUp(pickupTypes type)
-    {
-        if (type == pickupTypes.Fire)
-            return GameDataModel.NumberFirePU;
-
-        else
-            return -1;
-    }
-
-
     //End turn
     public void EndTurn()
     {
-        Debug.Log("End turn called");
         Time.timeScale = 0.0f;
         staticScoreMenu.SetActive(true);
         GameDataModel.PlayMode = false;
-        Debug.Log("Playmode val: " + GameDataModel.PlayMode);
     }
 
     //Reset Level
@@ -156,7 +118,6 @@ public class _GameManager : MonoBehaviour {
         }
 
         StartLevel();
-        Debug.Log("Playmode val: " + GameDataModel.PlayMode);
     }
 
 }
