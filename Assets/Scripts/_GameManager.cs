@@ -17,7 +17,9 @@ public class _GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] _levels;
 
-    public int _currentLevel { private set; get; } 
+    public int _currentLevel { private set; get; }
+
+  
 
     public static List<Resetable> _resetables = new List<Resetable>();
 
@@ -107,6 +109,7 @@ public class _GameManager : MonoBehaviour {
         Time.timeScale = 0.0f;
         staticScoreMenu.SetActive(true);
         GameDataModel.PlayMode = false;
+
     }
 
     //Reset Level

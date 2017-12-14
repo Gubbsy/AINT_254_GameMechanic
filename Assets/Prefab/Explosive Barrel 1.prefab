@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1627342551697604, guid: be631888a6b76a14b8160c3e286e9a6d, type: 2}
   power: 50
-  radius: 15
+  radius: 10
   upForce: 10
   damageRequired: 7
   radiusCollider: {fileID: 135713957391365940}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 1
+  _objectHealth: 10
   _pointsMuliplier: 1
   _isOnFire: 0
   structualDepen: []
@@ -160,7 +160,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 10
   m_Center: {x: 0, y: 0.68785805, z: 0}
 --- !u!136 &136353741861586174
 CapsuleCollider:
