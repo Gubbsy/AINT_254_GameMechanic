@@ -855,6 +855,10 @@ Prefab:
       propertyPath: _camTrans
       value: 
       objectReference: {fileID: 1698777370}
+    - target: {fileID: 1276983049687680, guid: a411bd9911a2fae438f42902ca583346, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a411bd9911a2fae438f42902ca583346, type: 2}
   m_IsPrefabParent: 0
@@ -1182,6 +1186,10 @@ Prefab:
       propertyPath: _camTrans
       value: 
       objectReference: {fileID: 1698777370}
+    - target: {fileID: 4586329019723692, guid: 9f9b255639ea3634aa49e7f667381d6a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -32.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f9b255639ea3634aa49e7f667381d6a, type: 2}
   m_IsPrefabParent: 0
