@@ -134,11 +134,8 @@ public class PlayerPhysics : MonoBehaviour {
         collisions++;
         if (collisions == 1)
             GameDataModel.PlayMode = true;
-        if (collisions == 2) {
-            _GM.EndInvoker();
-            Debug.Log("Collison: " + collisions);
-        }
-            
+        if (collisions == 2) 
+            _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
     }
 
 }

@@ -18,7 +18,8 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     private bool _hasExploded;
     private Explosive _explosive;
 
-    private bool _isOnFire;
+    [SerializeField]
+    public bool _isOnFire;
 
     [SerializeField]
     Rigidbody[] structualDepen;
@@ -65,9 +66,9 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         else
             gameObject.SetActive(false);
 
-        GameDataModel.DesObjDictionary.Remove(gameObject.GetComponent<Collider>());
+        Debug.Log(rb.velocity.magnitude);
 
-
+        //GameDataModel.DesObjDictionary.Remove(gameObject.GetComponent<Collider>());
     }
 
     //Each destructable object handles there own force and damage respectivley. 
@@ -106,7 +107,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         {
             TakeDamage(2);
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("Taking fire damage");
         }
 
         _isOnFire = false;
@@ -119,8 +119,18 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     public bool isSettling()
     {
+        if(gameObject.activeInHierarchy == true)
             return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
+        return false;
        
     }
+
+    //public bool isEnabled()
+    //{
+    //    if (gameObject.activeInHierarchy == true)
+    //        return true;
+
+    //    return false;
+    //}
 }
 

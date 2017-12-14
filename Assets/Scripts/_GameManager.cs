@@ -71,10 +71,6 @@ public class _GameManager : MonoBehaviour {
     }
 
 
-    public void EndInvoker()
-    {
-        InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
-    }
 
 	void Update () {
         glideBar.value = GameDataModel.GlideValue;
@@ -88,15 +84,15 @@ public class _GameManager : MonoBehaviour {
         {
             try
             {
-                if (pair.Value.isSettling())
-                {
-                    //Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
-                    return;
-                }
+                    if (pair.Value.isSettling())
+                    {
+                        //Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+                        return;
+                    }
             }
             catch { }
         }
-        Invoke("EndTurn", 2f); //EndTurn();
+        Invoke("EndTurn", 2f); 
     }
 
     //Add points

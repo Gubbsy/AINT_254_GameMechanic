@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class Resetable : MonoBehaviour
 {
+    [SerializeField]
+    private bool _resetPosition;
     private Vector3 _position;
+
+    [SerializeField]
+    private bool _resetRotation;
     private Quaternion _rotation;
+
+    [SerializeField]
+    private bool _resetScale;
     private Vector3 _scale;
+
+    [SerializeField]
+    private bool _resetActive;
     private bool _active;
+
+
     private int _health;
     private bool _isKin;
     private Color _color;
@@ -39,10 +52,17 @@ public class Resetable : MonoBehaviour
 
     public void Revert()
     {
-        _transform.position = _position;
-        _transform.rotation = _rotation;
-        _transform.localScale = _scale;
-        _gameObject.SetActive(_active);
+        if(_resetPosition)
+            _transform.position = _position;
+        if(_resetRotation)
+            _transform.rotation = _rotation;
+        if(_resetScale)
+            _transform.localScale = _scale;
+        if(_resetActive)
+            _gameObject.SetActive(_active);
+     
+            
+
 
 
         if (_rb != null)
@@ -55,6 +75,7 @@ public class Resetable : MonoBehaviour
         if (_do != null)
         {
             _do._objectHealth = _health;
+            _do._isOnFire = false;
 
         }
             
@@ -64,8 +85,10 @@ public class Resetable : MonoBehaviour
         if (_playerPhysics != null)
             _playerPhysics.collisions = 0;
 
-        if (_fireBreathing != null)
+        if (_fireBreathing != null) {
             _fireBreathing.flameTime = 1.5f;
+        }
+           
 
         GameDataModel.SetPickUpVal(GameDataModel.pickupTypes.Fire, 0);
 
@@ -98,6 +121,10 @@ public class Resetable : MonoBehaviour
         if (_ren != null)
             if (_ren.material.HasProperty("_Color"))
                 _color = _ren.material.color;
+
+        if (_gameObject.name == "Flame")
+            Debug.Log("Flame has been tracked" + _gameObject.transform.localPosition);
+
     }
                 
 }
