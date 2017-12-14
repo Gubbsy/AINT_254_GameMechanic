@@ -17,7 +17,7 @@ public class _GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] _levels;
 
-    private int _currentLevel = 0;
+    public int _currentLevel { private set; get; } 
 
     public static List<Resetable> _resetables = new List<Resetable>();
 
@@ -28,6 +28,7 @@ public class _GameManager : MonoBehaviour {
             throw new System.Exception("You can only have one _Gamemanager object! Remove one instance");
 
         singleton = this;
+        _currentLevel = 0;
     }
 
     public static _GameManager Single()
@@ -59,7 +60,7 @@ public class _GameManager : MonoBehaviour {
     {
         foreach (CameraRig c in GameDataModel.CamRigList)
         {
-            if (c.isActiveAndEnabled)
+            if (c.isActiveAndEnabled == true)
                 c.StartCamPan();
         }
 
@@ -84,9 +85,8 @@ public class _GameManager : MonoBehaviour {
         {
             try
             {
-                    if (pair.Value.isSettling())
+                    if (pair.Value.IsSettling())
                     {
-                        //Debug.Log(pair.Key.gameObject.name + ": " + pair.Key.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
                         return;
                     }
             }
@@ -116,8 +116,25 @@ public class _GameManager : MonoBehaviour {
         {
             _resetables[i].Revert();
         }
-
+        Debug.Log("------------------------- level reset ------------------------");
         StartLevel();
     }
+
+    public void NextLevel()
+    {
+        _levels[_currentLevel].SetActive(false);
+
+        _currentLevel++;
+
+        for (int i = 0; i < _resetables.Count; i++)
+        {
+            _resetables[i].Revert();
+        }
+
+        _levels[_currentLevel].SetActive(true);
+        StartLevel();
+    }
+
+
 
 }

@@ -18,12 +18,15 @@ public class CameraRig : MonoBehaviour {
     [SerializeField]
     Transform _camTrans;
 
+    private void Awake()
+    {
+        GameDataModel.CamRigList.Add(this);
+    }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         _camStartPos = _camTrans.position;
-        GameDataModel.CamRigList.Add(this);
     }
 
     public void StartCamPan()

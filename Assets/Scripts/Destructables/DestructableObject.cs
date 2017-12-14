@@ -66,9 +66,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         else
             gameObject.SetActive(false);
 
-        Debug.Log(rb.velocity.magnitude);
-
-        //GameDataModel.DesObjDictionary.Remove(gameObject.GetComponent<Collider>());
     }
 
     //Each destructable object handles there own force and damage respectivley. 
@@ -77,6 +74,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _hasExploded = true;
         rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
         TakeDamage((int) (power * effect));
+        Debug.Log("taking explosive damage");
     }
     
     public void TakeFireDamage()
@@ -112,18 +110,24 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _isOnFire = false;
     }
 
-    public bool HasExploded()
+    public bool GetHasExploded()
     {
         return _hasExploded;
     }
 
-    public bool isSettling()
+    public void SetHasExploded(bool value)
+    {
+        _hasExploded = value;
+    }
+
+    public bool IsSettling()
     {
         if(gameObject.activeInHierarchy == true)
             return _isOnFire || (rb.velocity.magnitude > 0.5 && rb.velocity.magnitude < 2);
         return false;
        
     }
+
 
     //public bool isEnabled()
     //{

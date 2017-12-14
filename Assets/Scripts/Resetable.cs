@@ -76,7 +76,7 @@ public class Resetable : MonoBehaviour
         {
             _do._objectHealth = _health;
             _do._isOnFire = false;
-
+            _do.SetHasExploded(false);
         }
             
         if (_ren != null)

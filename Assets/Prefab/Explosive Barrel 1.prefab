@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114670739836795886}
   - component: {fileID: 114131853959652840}
   - component: {fileID: 135713957391365940}
+  - component: {fileID: 114257197771155056}
   m_Layer: 0
   m_Name: Explosive Barrel 1
   m_TagString: explosiveObj
@@ -119,6 +120,21 @@ MonoBehaviour:
   upForce: 10
   damageRequired: 7
   radiusCollider: {fileID: 135713957391365940}
+--- !u!114 &114257197771155056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014406136250162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785576aa869a7264696a45342d609c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resetPosition: 1
+  _resetRotation: 1
+  _resetScale: 1
+  _resetActive: 0
 --- !u!114 &114670739836795886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectHealth: 1
   _pointsMuliplier: 1
+  _isOnFire: 0
   structualDepen: []
 --- !u!135 &135713957391365940
 SphereCollider:

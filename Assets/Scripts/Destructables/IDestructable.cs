@@ -4,8 +4,9 @@ using UnityEngine;
 
 public interface IDestructable{
 
-    bool isSettling();
-    bool HasExploded();
+    bool IsSettling();
+    bool GetHasExploded();
+    void SetHasExploded(bool val);
     void Die();
     void TakeDamage(int damageTaken);
     void Exploded(float power, Vector3 explosionPosition, float radius, float upForce, float effect);

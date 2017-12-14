@@ -51,8 +51,9 @@ public class Explosive : MonoBehaviour
             if (GameDataModel.DesObjDictionary.ContainsKey(col))
             {
                 IDestructable DO = GameDataModel.DesObjDictionary[col];
-                if (!DO.HasExploded())
+                if (!DO.GetHasExploded())
                 {
+                    Debug.Log("Colided with explosive radius");
                     DO.Exploded(power, _explosionPosition, radius, upForce, effect);
                     DO.DisableKen();
                 }  
