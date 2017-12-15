@@ -21,6 +21,12 @@ public class ScoreMenu : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
+        
+        Time.timeScale = 0.0f;
+    }
+
+    public void UpateScore()
+    {
         _points = GameDataModel.Points;
         score.text = _points.ToString();
 
@@ -29,12 +35,11 @@ public class ScoreMenu : MonoBehaviour {
         else if (_points < _silverLevel)
             gradingText.text = "bronze!";
         else if (_points < _goldLevel)
-            gradingText.text = "Silver!"; 
+            gradingText.text = "Silver!";
         else
             gradingText.text = "Gold!";
 
-        Time.timeScale = 0.0f;
     }
-	
+
 }
 

@@ -19,6 +19,8 @@ public class _GameManager : MonoBehaviour {
 
     public int _currentLevel { private set; get; }
 
+    public ScoreMenu _sc;
+
   
 
     public static List<Resetable> _resetables = new List<Resetable>();
@@ -41,8 +43,10 @@ public class _GameManager : MonoBehaviour {
 
 	void Start () {
         staticScoreMenu = scoreMenu;
+        _sc = scoreMenu.GetComponent<ScoreMenu>();
 
         StartLevel();
+
 
         //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
         // Destructable GameObject Script 
@@ -109,6 +113,7 @@ public class _GameManager : MonoBehaviour {
         Time.timeScale = 0.0f;
         staticScoreMenu.SetActive(true);
         GameDataModel.PlayMode = false;
+        _sc.UpateScore();
 
     }
 
