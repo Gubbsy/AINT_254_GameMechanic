@@ -478,6 +478,7 @@ MonoBehaviour:
   _levels:
   - {fileID: 988854539}
   - {fileID: 22276254}
+  _sc: {fileID: 0}
 --- !u!1 &397747301
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Glide Left:
+  m_Text: 'Glide:
 
 '
 --- !u!222 &644764962
