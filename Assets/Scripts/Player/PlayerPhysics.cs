@@ -19,11 +19,13 @@ public class PlayerPhysics : MonoBehaviour {
     private Vector3 _glideForceIntensity;
     [SerializeField]
     private _GameManager _GM;
-   
+
+    private static bool _canFire;
+
 
 
     // Use this for initialization
-    void Start () {
+    void Start() {
 
         //assign transfrom variable to gameobject transform value and initialsie array
         _transform = transform;
@@ -31,6 +33,7 @@ public class PlayerPhysics : MonoBehaviour {
 
         _dotLine = new GameObject[10];
 
+        _canFire = false;
 
 
         //Fill array with dot gameObjects and set them to false
@@ -40,65 +43,71 @@ public class PlayerPhysics : MonoBehaviour {
             tempObj.SetActive(false);
             _dotLine[i] = tempObj;
         }
-	}
-	
+    }
 
-	void Update () {
+
+    void Update() {
 
         if (GameDataModel.PlayMode == true)
         {
+
             float forceInX;
             float forceInY;
 
             if (_canGlide)
                 Glide();
 
-            if (Input.GetMouseButton(0))
+            if (_canFire)
             {
-
-                Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
-                characterPosition.z = 0;
-
-                _direction = (characterPosition - Input.mousePosition).normalized;
-
-                forceInX = (characterPosition.x - Input.mousePosition.x);
-                forceInY = (characterPosition.y - Input.mousePosition.y);
-
-                _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
-
-                Aim();
-            }
-
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                _rigidbody.velocity = _direction * _forceValue;
-
-                for (int i = 0; i < _dotLine.Length; i++)
+                if (Input.GetMouseButton(0))
                 {
-                    _dotLine[i].SetActive(false);
+
+                    Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
+                    characterPosition.z = 0;
+
+                    _direction = (characterPosition - Input.mousePosition).normalized;
+
+                    forceInX = (characterPosition.x - Input.mousePosition.x);
+                    forceInY = (characterPosition.y - Input.mousePosition.y);
+
+                    _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
+
+                    Aim();
                 }
 
-                _canGlide = true;
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    _rigidbody.velocity = _direction * _forceValue;
+
+                    for (int i = 0; i < _dotLine.Length; i++)
+                    {
+                        _dotLine[i].SetActive(false);
+                    }
+
+                    _canGlide = true;
+                    _canFire = false;
+                }
             }
         }
+
         else
             return;
-        
+
     }
 
     private void Aim()
     {
         float Vx = _direction.x * _forceValue;
         float Vy = _direction.y * _forceValue;
-  
+
 
         for (int i = 0; i < _dotLine.Length; i++)
         {
             float t = i * 0.1f;
-            
-            _dotLine[i].transform.position = new Vector3((_transform.position.x + Vx * t), 
-                (_transform.position.y + Vy * t) - (0.5f * 9.81f * t*t), _transform.position.z);
+
+            _dotLine[i].transform.position = new Vector3((_transform.position.x + Vx * t),
+                (_transform.position.y + Vy * t) - (0.5f * 9.81f * t * t), _transform.position.z);
 
             _dotLine[i].SetActive(true);
         }
@@ -113,7 +122,7 @@ public class PlayerPhysics : MonoBehaviour {
         }
         else
             return;
-       
+
     }
 
     private void Glide()
@@ -135,8 +144,12 @@ public class PlayerPhysics : MonoBehaviour {
         collisions++;
         if (collisions == 1)
             GameDataModel.PlayMode = true;
-        if (collisions == 2) 
+        if (collisions == 2)
             _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
+    }
+
+    public static void TurnOnLaunch(){
+        _canFire = true;
     }
 
 }

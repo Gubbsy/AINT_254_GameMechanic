@@ -100,5 +100,6 @@ public class CameraRig : MonoBehaviour {
             Debug.Log("----> " + allRendered);
             Debug.Log("----> " + _camExtremPoints.Length);
         }
+        PlayerPhysics.TurnOnLaunch();
     }    
 }
