@@ -70,7 +70,7 @@ public class _GameManager : MonoBehaviour {
                 c.StartCamPan();
         }
 
-        _levels[_currentLevel].SetActive(true);
+
         GameDataModel.Points = 0;
         Time.timeScale = 1.0f;
         scoreMenu.SetActive(false);

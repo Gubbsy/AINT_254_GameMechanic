@@ -91,13 +91,14 @@ public class PlayerPhysics : MonoBehaviour {
     {
         float Vx = _direction.x * _forceValue;
         float Vy = _direction.y * _forceValue;
+  
 
         for (int i = 0; i < _dotLine.Length; i++)
         {
             float t = i * 0.1f;
-
+            
             _dotLine[i].transform.position = new Vector3((_transform.position.x + Vx * t), 
-                (_transform.position.y + Vy * t) - (0.5f * 9.81f * t*t), 0.0f);
+                (_transform.position.y + Vy * t) - (0.5f * 9.81f * t*t), _transform.position.z);
 
             _dotLine[i].SetActive(true);
         }
