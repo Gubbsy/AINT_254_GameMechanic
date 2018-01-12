@@ -121,10 +121,6 @@ public class Resetable : MonoBehaviour
         if (_ren != null)
             if (_ren.material.HasProperty("_Color"))
                 _color = _ren.material.color;
-
-        if (_gameObject.name == "Flame")
-            Debug.Log("Flame has been tracked" + _gameObject.transform.localPosition);
-
     }
                 
 }

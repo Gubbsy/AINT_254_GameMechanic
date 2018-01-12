@@ -12,7 +12,7 @@ public class PlayerPhysics : MonoBehaviour {
 
     public float _forceValue;
     private GameObject[] _dotLine;
-    private Transform _transform;
+    private  Transform _transform;
     private Vector3 _direction;
     private Rigidbody _rigidbody;
     private bool _canGlide = false;
@@ -22,6 +22,9 @@ public class PlayerPhysics : MonoBehaviour {
 
     private static bool _canFire;
 
+    private Vector3 _playerStartPos;
+
+    private static int _turn;
 
 
     // Use this for initialization
@@ -29,7 +32,9 @@ public class PlayerPhysics : MonoBehaviour {
 
         //assign transfrom variable to gameobject transform value and initialsie array
         _transform = transform;
+        _turn = 0;
         _rigidbody = GetComponent<Rigidbody>();
+        _playerStartPos = _transform.position;
 
         _dotLine = new GameObject[10];
 
@@ -145,11 +150,24 @@ public class PlayerPhysics : MonoBehaviour {
         if (collisions == 1)
             GameDataModel.PlayMode = true;
         if (collisions == 2)
-            _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
+        {
+            Invoke("ResetPlayer", 2);
+            _turn += 1;
+            collisions = 0;
+            if (_turn > 3)
+                _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
+        }
     }
 
     public static void TurnOnLaunch(){
         _canFire = true;
+    }
+
+    public void ResetPlayer() {
+        _transform.position = _playerStartPos;
+        GameDataModel.GlideValue = 40;
+        _canFire = true;
+        _rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
 }

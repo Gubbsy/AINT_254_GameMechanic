@@ -38,13 +38,9 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public void TakeDamage(int damageTaken)
     {
         
-        //Debug.Log("Object: " + gameObject.name + "Damage Taken: " + damageTaken);
 
         _objectHealth -= damageTaken;
         _pointsGiven = damageTaken;
-
-        //Debug.Log("Object: " + gameObject.name + "Health: " + _objectHealth);
-        //Debug.Log("Object: " + gameObject.name + "Points Given: " + _pointsGiven);
 
         _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
 
@@ -74,7 +70,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _hasExploded = true;
         rb.AddExplosionForce(power, explosionPosition, radius, upForce, forceMode);
         TakeDamage((int) (power * effect));
-        Debug.Log("taking explosive damage");
     }
     
     public void TakeFireDamage()
@@ -96,7 +91,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
             contactVelocity = rb.velocity.magnitude;
             TakeDamage((int)contactVelocity);
     }
-
 
 
     public IEnumerator FireDamage()

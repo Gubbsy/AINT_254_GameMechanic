@@ -81,11 +81,9 @@ public class CameraRig : MonoBehaviour {
 
             for (float j = 0.0f; j < 1.0f; j += Time.deltaTime * 20f) //20f
             {
-                Debug.Log("--> " + j);
                 _camTrans.LookAt(_levelCenter.transform.position);
 
                 _camTrans.position = Vector3.Lerp(previousPos, nextPosition, j);
-                Debug.Log("----> " + _camTrans.position);
                 yield return new WaitForSeconds(0.001f);
             }
             previousPos = _camTrans.position;
@@ -97,8 +95,6 @@ public class CameraRig : MonoBehaviour {
                 if (!_camExtremPoints[x].GetComponent<VisibilityCheck>()._isRendered)
                     allRendered = false;
             }
-            Debug.Log("----> " + allRendered);
-            Debug.Log("----> " + _camExtremPoints.Length);
         }
         PlayerPhysics.TurnOnLaunch();
     }    

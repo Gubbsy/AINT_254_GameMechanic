@@ -21,6 +21,7 @@ public class _GameManager : MonoBehaviour {
 
     public ScoreMenu _sc;
 
+
   
 
     public static List<Resetable> _resetables = new List<Resetable>();
@@ -98,7 +99,7 @@ public class _GameManager : MonoBehaviour {
             }
             catch { }
         }
-        Invoke("EndTurn", 2f); 
+            Invoke("EndTurn", 2f);
     }
 
     //Add points
@@ -142,6 +143,10 @@ public class _GameManager : MonoBehaviour {
         _levels[_currentLevel].SetActive(true);
         StartLevel();
     }
+
+    
+
+
 
 
 
