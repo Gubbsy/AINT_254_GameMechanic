@@ -21,9 +21,6 @@ public class _GameManager : MonoBehaviour {
 
     public ScoreMenu _sc;
 
-
-  
-
     public static List<Resetable> _resetables = new List<Resetable>();
 
 
@@ -101,12 +98,6 @@ public class _GameManager : MonoBehaviour {
             catch { }
         }
             Invoke("EndTurn", 2f);
-    }
-
-    //Add points
-    public static void AddPoints(int pointsAdded)
-    {
-        GameDataModel.Points += pointsAdded;
     }
 
     //End turn

@@ -10,20 +10,23 @@ public class PlayerPhysics : MonoBehaviour {
 
     public int collisions;
     public int _turn;
+    private static bool _canFire;
 
+    private bool _canGlide = false;
     public float _forceValue;
+    private Vector3 _glideForceIntensity;
+
     private GameObject[] _dotLine;
     private  Transform _transform;
     private Vector3 _direction;
     private Rigidbody _rigidbody;
-    private bool _canGlide = false;
-    private Vector3 _glideForceIntensity;
+
+    private Vector3 _playerStartPos;
+
     [SerializeField]
     private _GameManager _GM;
 
-    private static bool _canFire;
-
-    private Vector3 _playerStartPos;
+    
 
     
 
@@ -31,15 +34,19 @@ public class PlayerPhysics : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
-        //assign transfrom variable to gameobject transform value and initialsie array
+        //assign transfrom variable to gameobject transform value and store the players starting position 
         _transform = transform;
-        _turn = 0;
         _rigidbody = GetComponent<Rigidbody>();
         _playerStartPos = _transform.position;
 
+        //Intialise dot preview line
         _dotLine = new GameObject[10];
 
+        //Set weather the player can fire
         _canFire = false;
+
+        //Set the player current turn
+        _turn = 0;
 
 
         //Fill array with dot gameObjects and set them to false
@@ -53,7 +60,7 @@ public class PlayerPhysics : MonoBehaviour {
 
 
     void Update() {
-
+       
         if (GameDataModel.PlayMode == true)
         {
 
@@ -63,14 +70,16 @@ public class PlayerPhysics : MonoBehaviour {
             if (_canGlide)
                 Glide();
 
+            //If the player can fire
             if (_canFire == true)
             {
+                //When the player clicks and drags, use the differencce between the player postion and the mouse position  on a 2D plane to calculate fire force and direction. 
                 if (Input.GetMouseButton(0))
                 {
-
+                    //Get 3D character position as 2D screen plane value.
                     Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
                     characterPosition.z = 0;
-
+                    //get direction by normalising the diffrernce between mouse and player.
                     _direction = (characterPosition - Input.mousePosition).normalized;
 
                     forceInX = (characterPosition.x - Input.mousePosition.x);

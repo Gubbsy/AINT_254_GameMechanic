@@ -37,12 +37,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Take damage and add points to Game Manager
     public void TakeDamage(int damageTaken)
     {
-        
-
+        //Calculate points to add and add them 
         _objectHealth -= damageTaken;
-        _pointsGiven = damageTaken;
-
-        _GameManager.AddPoints(_pointsGiven * _pointsMuliplier);
+        _pointsGiven = damageTaken;       
+        GameDataModel.Points += (_pointsGiven * _pointsMuliplier); 
 
         // if health is below zero then die
         if (_objectHealth < 0)
@@ -122,13 +120,5 @@ public class DestructableObject : MonoBehaviour, IDestructable {
        
     }
 
-
-    //public bool isEnabled()
-    //{
-    //    if (gameObject.activeInHierarchy == true)
-    //        return true;
-
-    //    return false;
-    //}
 }
 

@@ -83,6 +83,7 @@ public class GameDataModel {
             return;
     }
 
+    //Dictionary of destructable objects within the scene
     public static Dictionary<Collider, IDestructable> DesObjDictionary
     {
         get
