@@ -60,9 +60,6 @@ public class Resetable : MonoBehaviour
             _transform.localScale = _scale;
         if(_resetActive)
             _gameObject.SetActive(_active);
-     
-            
-
 
 
         if (_rb != null)
@@ -83,7 +80,10 @@ public class Resetable : MonoBehaviour
             _ren.material.color = _color;
 
         if (_playerPhysics != null)
+        {
             _playerPhysics.collisions = 0;
+            _playerPhysics._turn = 0;
+        }
 
         if (_fireBreathing != null) {
             _fireBreathing.flameTime = 1.5f;

@@ -9,6 +9,7 @@ public class PlayerPhysics : MonoBehaviour {
     private GameObject _dot;
 
     public int collisions;
+    public int _turn;
 
     public float _forceValue;
     private GameObject[] _dotLine;
@@ -24,7 +25,7 @@ public class PlayerPhysics : MonoBehaviour {
 
     private Vector3 _playerStartPos;
 
-    private static int _turn;
+    
 
 
     // Use this for initialization
@@ -62,7 +63,7 @@ public class PlayerPhysics : MonoBehaviour {
             if (_canGlide)
                 Glide();
 
-            if (_canFire)
+            if (_canFire == true)
             {
                 if (Input.GetMouseButton(0))
                 {
@@ -151,11 +152,16 @@ public class PlayerPhysics : MonoBehaviour {
             GameDataModel.PlayMode = true;
         if (collisions == 2)
         {
-            Invoke("ResetPlayer", 2);
-            _turn += 1;
-            collisions = 0;
-            if (_turn > 3)
+            if (_turn >= 2)
+            {
+                Debug.Log("3rd turn called");
+                _canFire = false;
                 _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
+            }
+            else {
+                _turn += 1;
+                Invoke("ResetPlayer", 2);
+            }
         }
     }
 
@@ -168,6 +174,10 @@ public class PlayerPhysics : MonoBehaviour {
         GameDataModel.GlideValue = 40;
         _canFire = true;
         _rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        collisions = 0;
+        Debug.Log("Collisions: " + collisions);
+        Debug.Log("Turn: " + _turn);
     }
+
 
 }

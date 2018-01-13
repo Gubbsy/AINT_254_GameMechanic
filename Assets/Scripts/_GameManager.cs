@@ -88,6 +88,7 @@ public class _GameManager : MonoBehaviour {
    
     public void CheckForEnd()
     {
+        Debug.Log("Check for end called");
         foreach (KeyValuePair<Collider,IDestructable> pair in GameDataModel.DesObjDictionary)
         {
             try
