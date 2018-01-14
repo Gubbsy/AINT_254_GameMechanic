@@ -45,18 +45,6 @@ public class _GameManager : MonoBehaviour {
         StartLevel();
 
 
-        //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
-        // Destructable GameObject Script 
-        foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())     
-        {
-            Collider col = gameObj.GetComponent<Collider>();
-            DestructableObject destScript = gameObj.GetComponent<DestructableObject>();
-
-            if (col != null && destScript != null)
-            {
-                GameDataModel.DesObjDictionary.Add(col, destScript);
-            }
-        }
     }
 
     public void StartLevel()
@@ -67,6 +55,7 @@ public class _GameManager : MonoBehaviour {
                 c.StartCamPan();
         }
 
+        AddToDictionary();
 
         GameDataModel.Points = 0;
         Time.timeScale = 1.0f;
@@ -116,7 +105,7 @@ public class _GameManager : MonoBehaviour {
     public void NextLevel()
     {
         _levels[_currentLevel].SetActive(false);
-
+        GameDataModel.DesObjDictionary.Clear();
         _currentLevel++;
 
         for (int i = 0; i < _resetables.Count; i++)
@@ -126,6 +115,22 @@ public class _GameManager : MonoBehaviour {
 
         _levels[_currentLevel].SetActive(true);
         StartLevel();
+    }
+
+    private void AddToDictionary() {
+
+        //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
+        // Destructable GameObject Script 
+        foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())
+        {
+            Collider col = gameObj.GetComponent<Collider>();
+            DestructableObject destScript = gameObj.GetComponent<DestructableObject>();
+
+            if (col != null && destScript != null)
+            {
+                GameDataModel.DesObjDictionary.Add(col, destScript);
+            }
+        }
     }
 
     
