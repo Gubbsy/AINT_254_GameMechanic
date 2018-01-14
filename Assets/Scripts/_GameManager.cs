@@ -10,14 +10,17 @@ public class _GameManager : MonoBehaviour {
     private static _GameManager singleton;
 
     public GameObject scoreMenu;
-    public static GameObject staticScoreMenu;
+    private ScoreMenu _scoreMenu;
+
+    public GameObject startMenu;
+
+
+
 
     [SerializeField]
     private GameObject[] _levels;
-
     public int _currentLevel { private set; get; }
 
-    public ScoreMenu _sc;
 
     public static List<Resetable> _resetables = new List<Resetable>();
 
@@ -39,16 +42,12 @@ public class _GameManager : MonoBehaviour {
 
 
 	void Start () {
-        staticScoreMenu = scoreMenu;
-        _sc = scoreMenu.GetComponent<ScoreMenu>();
-
-        StartLevel();
-
-
+        _scoreMenu = scoreMenu.GetComponent<ScoreMenu>();
     }
 
     public void StartLevel()
     {
+        startMenu.SetActive(false);
         foreach (CameraRig c in GameDataModel.CamRigList)
         {
             if (c.isActiveAndEnabled == true)
@@ -85,9 +84,9 @@ public class _GameManager : MonoBehaviour {
     public void EndTurn()
     {
         Time.timeScale = 0.0f;
-        staticScoreMenu.SetActive(true);
+        scoreMenu.SetActive(true);
         GameDataModel.PlayMode = false;
-        _sc.UpateScore();
+        _scoreMenu.UpateScore();
 
     }
 
