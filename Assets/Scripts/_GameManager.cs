@@ -99,6 +99,7 @@ public class _GameManager : MonoBehaviour {
             _resetables[i].Revert();
         }
         Debug.Log("------------------------- level reset ------------------------");
+        GameDataModel.DesObjDictionary.Clear();
         StartLevel();
     }
 

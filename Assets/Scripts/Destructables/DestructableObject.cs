@@ -119,7 +119,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public bool IsSettling()
     {
         if(gameObject.activeInHierarchy == true)
-            return isOnFire || (_rb.velocity.magnitude > 0.5 && _rb.velocity.magnitude < 2);
+            return isOnFire || (_rb.velocity.magnitude > 0.5 && _rb.velocity.magnitude < 2.5);
         return false;
        
     }
