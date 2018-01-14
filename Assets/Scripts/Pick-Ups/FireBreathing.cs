@@ -13,7 +13,7 @@ public class FireBreathing : MonoBehaviour {
 
     private bool _flameOn;
 
-    //Find flame collider object
+    //Find flame collider object and intialy diable it.
      void Start()
     {
         _flames = GameObject.FindGameObjectWithTag("FlameCollider");

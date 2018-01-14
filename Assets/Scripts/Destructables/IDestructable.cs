@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IDestructable{
 
+    //Interface that destructable objects must implememnt. 
     bool IsSettling();
     bool GetHasExploded();
     void SetHasExploded(bool val);

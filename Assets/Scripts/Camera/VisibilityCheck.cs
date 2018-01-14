@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VisibilityCheck : MonoBehaviour {
+    /// <summary>
+    /// Checks whether objects are rendered or not. 
+    /// </summary>
 
     public bool _isRendered { get; set; }
 

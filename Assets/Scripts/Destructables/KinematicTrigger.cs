@@ -18,7 +18,7 @@ public class KinematicTrigger : MonoBehaviour {
 
     /// <summary>
     /// When parents object collider is triggered wither by collision or explosion
-    /// deactivate kinematic on all children
+    /// deactivate kinematic on all children within the childObjects array.
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {

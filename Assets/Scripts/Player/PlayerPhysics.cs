@@ -8,14 +8,15 @@ public class PlayerPhysics : MonoBehaviour {
     [SerializeField]
     private GameObject _dot;
 
+    //turn variables.
     public int collisions;
-    public int _turn;
+    public int turn;
     private static bool _canFire;
-
+    //glide variables
     private bool _canGlide = false;
-    public float _forceValue;
+    public float forceValue;
     private Vector3 _glideForceIntensity;
-
+    //firing variables.
     private GameObject[] _dotLine;
     private  Transform _transform;
     private Vector3 _direction;
@@ -46,7 +47,7 @@ public class PlayerPhysics : MonoBehaviour {
         _canFire = false;
 
         //Set the player current turn
-        _turn = 0;
+        turn = 0;
 
 
         //Fill array with dot gameObjects and set them to false
@@ -81,25 +82,29 @@ public class PlayerPhysics : MonoBehaviour {
                     characterPosition.z = 0;
                     //get direction by normalising the diffrernce between mouse and player.
                     _direction = (characterPosition - Input.mousePosition).normalized;
-
+                    // calculate force in X and Y from the difference between theplayer and mouse
                     forceInX = (characterPosition.x - Input.mousePosition.x);
                     forceInY = (characterPosition.y - Input.mousePosition.y);
 
-                    _forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
-
+                    //calculate force value using pythagorus, devided appropriatly to give desired force. 
+                    forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
+                    //call aim preview.
                     Aim();
                 }
 
 
                 if (Input.GetMouseButtonUp(0))
                 {
-                    _rigidbody.velocity = _direction * _forceValue;
+                    //apply force to layer when moue is released using the calculated values.
+                    _rigidbody.velocity = _direction * forceValue;
 
+                    //disable dot line aim preview/
                     for (int i = 0; i < _dotLine.Length; i++)
                     {
                         _dotLine[i].SetActive(false);
                     }
 
+                    //allow the player to glide, disallow the player to glide again. 
                     _canGlide = true;
                     _canFire = false;
                 }
@@ -113,14 +118,17 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void Aim()
     {
-        float Vx = _direction.x * _forceValue;
-        float Vy = _direction.y * _forceValue;
+        //calculate velocity in X and Y
+        float Vx = _direction.x * forceValue;
+        float Vy = _direction.y * forceValue;
 
-
+        //for every dot in teh array set position relative to the force in x and y.
         for (int i = 0; i < _dotLine.Length; i++)
         {
+            //calculate diatcne between dots
             float t = i * 0.1f;
 
+            //set position to x relatibe to force in x * the distacne between the dots, set position in y realative to force in y, distance between dots minus the drop created by gravity. 
             _dotLine[i].transform.position = new Vector3((_transform.position.x + Vx * t),
                 (_transform.position.y + Vy * t) - (0.5f * 9.81f * t * t), _transform.position.z);
 
@@ -130,6 +138,7 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        //If in playmode apply forces from gliding. 
         if (GameDataModel.PlayMode == true)
         {
             _rigidbody.AddForce(_glideForceIntensity);
@@ -142,11 +151,13 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void Glide()
     {
+        //asign glide force value based on the glide value and the users horizontal input.
         _glideForceIntensity = new Vector3(GameDataModel.GlideValue, 0, 0);
         _glideForceIntensity *= Input.GetAxis("Horizontal");
 
         if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("Horizontal") > 0)
         {
+            //subtract from glide left when glide is used. 
             GameDataModel.GlideValue -= 0.5f;
 
             if (GameDataModel.GlideValue == 0)
@@ -156,36 +167,43 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Tally collison - first collision is the player contacting the starting podium, 2nd collsion is the impact after firing. 
         collisions++;
+
+        //activate playmode on first collsion. 
         if (collisions == 1)
             GameDataModel.PlayMode = true;
+
+        //Check which turn the player is on after th second collsion. 
         if (collisions == 2)
         {
-            if (_turn >= 2)
+            //iIf the turn is greater or equal to 2 the player has had 3 turns and it is he end of the round. 
+            if (turn >= 2)
             {
-                Debug.Log("3rd turn called");
+                //disable the player bing able to fire and crepeatedly invoke the end checker every second. 
                 _canFire = false;
                 _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
             }
             else {
-                _turn += 1;
+                //increment the turn and reset the player.
+                turn += 1;
                 Invoke("ResetPlayer", 2);
             }
         }
     }
 
     public static void TurnOnLaunch(){
+        //turn on the players ability to fire. 
         _canFire = true;
     }
 
     public void ResetPlayer() {
+        //reset all the players values.
         _transform.position = _playerStartPos;
         GameDataModel.GlideValue = 40;
         _canFire = true;
         _rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         collisions = 0;
-        Debug.Log("Collisions: " + collisions);
-        Debug.Log("Turn: " + _turn);
     }
 
 

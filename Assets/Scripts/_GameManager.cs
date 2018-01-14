@@ -9,10 +9,8 @@ public class _GameManager : MonoBehaviour {
 
     private static _GameManager singleton;
 
-    public Slider glideBar;
     public GameObject scoreMenu;
     public static GameObject staticScoreMenu;
-    public Text pointText;
 
     [SerializeField]
     private GameObject[] _levels;
@@ -23,7 +21,7 @@ public class _GameManager : MonoBehaviour {
 
     public static List<Resetable> _resetables = new List<Resetable>();
 
-
+    //Singleton so there is only ever one instacne of the game mamanager. 
     public _GameManager()
     {
         if (singleton != null)
@@ -33,6 +31,7 @@ public class _GameManager : MonoBehaviour {
         _currentLevel = 0;
     }
 
+    //Get and instacne of the game manager
     public static _GameManager Single()
     {
         return singleton;
@@ -73,13 +72,6 @@ public class _GameManager : MonoBehaviour {
         Time.timeScale = 1.0f;
         scoreMenu.SetActive(false);
         GameDataModel.GlideValue = 40;
-    }
-
-
-
-	void Update () {
-        glideBar.value = GameDataModel.GlideValue;
-        pointText.text = GameDataModel.Points.ToString(); 
     }
 
    

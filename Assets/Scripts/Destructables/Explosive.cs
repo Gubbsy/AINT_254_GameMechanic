@@ -27,7 +27,9 @@ public class Explosive : MonoBehaviour
 
     /// <summary>
     /// Detonate explosive detecting all objects in range and calling DestuctableObject to apply explosive force
-    /// and damage to objects in range 
+    /// and damage to objects in range. Add all object's colliders within the radis to an array of collsiders,
+    /// for each collider withi the array check if they are in the dictionairy of destructable object, and have not been exploded already. 
+    /// Then call explosive method on destructable object. 
     /// </summary>
     public void Detonate()
     {

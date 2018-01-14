@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DictionaryDataModel {
 
+    // Destructable dictionary data model, where by detructabke objects can be added and removed usiing therir collider as a key. 
     private Dictionary<Collider, IDestructable> desObjDictionary;
 
 

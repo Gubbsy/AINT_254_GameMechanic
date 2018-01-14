@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Resetable : MonoBehaviour
 {
+    //All variables that need reseting, with editor booleans hat can be seleted to reset desired values. 
     [SerializeField]
     private bool _resetPosition;
     private Vector3 _position;
@@ -26,7 +27,6 @@ public class Resetable : MonoBehaviour
     private Color _color;
 
     
-
     Transform _transform;
     GameObject _gameObject;
     Rigidbody _rb;
@@ -38,6 +38,7 @@ public class Resetable : MonoBehaviour
   
     private void Awake()
     {
+        //on awake gather all componets for reset
         _gameObject = gameObject;
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
@@ -46,12 +47,14 @@ public class Resetable : MonoBehaviour
         _playerPhysics = GetComponent<PlayerPhysics>();
         _fireBreathing = GetComponent<FireBreathing>(); 
         Track();
-
+        
+        //Add thi to the resetables array within the game manager.
         _GameManager._resetables.Add(this);
     }
 
     public void Revert()
     {
+        // Depending on vales chosen to reset, reset variables
         if(_resetPosition)
             _transform.position = _position;
         if(_resetRotation)
@@ -61,7 +64,7 @@ public class Resetable : MonoBehaviour
         if(_resetActive)
             _gameObject.SetActive(_active);
 
-
+        //Depending on an objects coponents reset appropriate values. 
         if (_rb != null)
         {
             _rb.isKinematic = _isKin;
@@ -72,7 +75,7 @@ public class Resetable : MonoBehaviour
         if (_do != null)
         {
             _do._objectHealth = _health;
-            _do._isOnFire = false;
+            _do.isOnFire = false;
             _do.SetHasExploded(false);
         }
             
@@ -82,14 +85,14 @@ public class Resetable : MonoBehaviour
         if (_playerPhysics != null)
         {
             _playerPhysics.collisions = 0;
-            _playerPhysics._turn = 0;
+            _playerPhysics.turn = 0;
         }
 
         if (_fireBreathing != null) {
             _fireBreathing.flameTime = 1.5f;
         }
            
-
+        //reset pick-ups and cancael any onvokes
         GameDataModel.SetPickUpVal(GameDataModel.pickupTypes.Fire, 0);
 
         _GameManager.Single().CancelInvoke("EndTurn");
@@ -99,6 +102,7 @@ public class Resetable : MonoBehaviour
 
     public void Track()
     {
+        //Intial track for objects values dependingupon components. 
         _position = _transform.position;
         _rotation = _transform.rotation;
         _scale = _transform.localScale;

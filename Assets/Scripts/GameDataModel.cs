@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 public class GameDataModel {
+    //Data model for game where all key glabal data can be modified and accessed. 
 
     //Enum for pick-ups (alows for addition at later date)
     public enum pickupTypes
