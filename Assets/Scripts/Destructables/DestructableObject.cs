@@ -53,8 +53,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public void Die()
     {
         if (gameObject.tag == "explosiveObj")
-        {  
+        {
+            _hasExploded = true;
             _explosive.Detonate();
+            
         }
         else
             gameObject.SetActive(false);
@@ -64,7 +66,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Each destructable object handles there own force and damage respectivley. 
     public void Exploded(float power, Vector3 explosionPosition, float radius, float upForce, float effect)
     {
-        _hasExploded = true;
+       
         _rb.AddExplosionForce(power, explosionPosition, radius, upForce, _forceMode);
         TakeDamage((int) (power * effect));
     }
