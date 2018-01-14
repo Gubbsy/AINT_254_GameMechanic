@@ -16,12 +16,18 @@ public class GameDataModel {
     private static int _points;
     private static float _glideValue;
     private static bool _playMode;
+    private static int _attempts;
 
     private static List<CameraRig> _camRigList = new List<CameraRig>();
 
     //Create dictoinary to store all gameobjects in scene with collider and DestructableObject script
     private static Dictionary<Collider, IDestructable> desObjDictionary = new Dictionary<Collider, IDestructable>();
 
+    public static int Attempts
+    {
+        get { return _attempts;}
+        set { _attempts = value; }
+    }
 
     public static int Points
     {

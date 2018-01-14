@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 
     public Text pointText;
+    public Text attempts;
+    public Text pickUps;
     public Slider glideBar;
 
 	// Use this for initialization
@@ -17,5 +19,7 @@ public class HUD : MonoBehaviour {
 	void Update () {
         glideBar.value = GameDataModel.GlideValue;
         pointText.text = GameDataModel.Points.ToString();
+        attempts.text = GameDataModel.Attempts.ToString();
+        pickUps.text = GameDataModel.GetPickUp(GameDataModel.pickupTypes.Fire).ToString();
     }
 }

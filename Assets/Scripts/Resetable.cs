@@ -85,7 +85,6 @@ public class Resetable : MonoBehaviour
         if (_playerPhysics != null)
         {
             _playerPhysics.collisions = 0;
-            _playerPhysics.turn = 0;
         }
 
         if (_fireBreathing != null) {
@@ -94,6 +93,7 @@ public class Resetable : MonoBehaviour
            
         //reset pick-ups and cancael any onvokes
         GameDataModel.SetPickUpVal(GameDataModel.pickupTypes.Fire, 0);
+        GameDataModel.Attempts = 3;
 
         _GameManager.Single().CancelInvoke("EndTurn");
         _GameManager.Single().CancelInvoke("EndInvoker");

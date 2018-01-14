@@ -10,7 +10,6 @@ public class PlayerPhysics : MonoBehaviour {
 
     //turn variables.
     public int collisions;
-    public int turn;
     private static bool _canFire;
     //glide variables
     private bool _canGlide = false;
@@ -47,7 +46,7 @@ public class PlayerPhysics : MonoBehaviour {
         _canFire = false;
 
         //Set the player current turn
-        turn = 0;
+        GameDataModel.Attempts = 3;
 
 
         //Fill array with dot gameObjects and set them to false
@@ -178,15 +177,16 @@ public class PlayerPhysics : MonoBehaviour {
         if (collisions == 2)
         {
             //iIf the turn is greater or equal to 2 the player has had 3 turns and it is he end of the round. 
-            if (turn >= 2)
+            if (GameDataModel.Attempts <= 1)
             {
                 //disable the player bing able to fire and crepeatedly invoke the end checker every second. 
                 _canFire = false;
+                GameDataModel.Attempts = 0;
                 _GM.InvokeRepeating("CheckForEnd", 3.0f, 1.0f);
             }
             else {
                 //increment the turn and reset the player.
-                turn += 1;
+                GameDataModel.Attempts -= 1;
                 Invoke("ResetPlayer", 2);
             }
         }

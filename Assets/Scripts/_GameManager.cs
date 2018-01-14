@@ -12,9 +12,12 @@ public class _GameManager : MonoBehaviour {
     public GameObject scoreMenu;
     private ScoreMenu _scoreMenu;
 
+    public GameObject nextButton;
+    public GameObject prvsButton;
+
+    public GameObject HUD;
+
     public GameObject startMenu;
-
-
 
 
     [SerializeField]
@@ -43,10 +46,14 @@ public class _GameManager : MonoBehaviour {
 
 	void Start () {
         _scoreMenu = scoreMenu.GetComponent<ScoreMenu>();
+        HUD.SetActive(false);
+        scoreMenu.SetActive(false);
+        startMenu.SetActive(true);
     }
 
     public void StartLevel()
     {
+        HUD.SetActive(true);
         startMenu.SetActive(false);
         foreach (CameraRig c in GameDataModel.CamRigList)
         {
@@ -85,6 +92,7 @@ public class _GameManager : MonoBehaviour {
     {
         Time.timeScale = 0.0f;
         scoreMenu.SetActive(true);
+
         GameDataModel.PlayMode = false;
         _scoreMenu.UpateScore();
 
@@ -104,17 +112,36 @@ public class _GameManager : MonoBehaviour {
 
     public void NextLevel()
     {
-        _levels[_currentLevel].SetActive(false);
-        GameDataModel.DesObjDictionary.Clear();
-        _currentLevel++;
-
-        for (int i = 0; i < _resetables.Count; i++)
         {
-            _resetables[i].Revert();
-        }
+            _levels[_currentLevel].SetActive(false);
+            GameDataModel.DesObjDictionary.Clear();
+            _currentLevel++;
 
-        _levels[_currentLevel].SetActive(true);
-        StartLevel();
+            for (int i = 0; i < _resetables.Count; i++)
+            {
+                _resetables[i].Revert();
+            }
+
+            _levels[_currentLevel].SetActive(true);
+            StartLevel();
+        }
+    }
+
+    public void PreviouseLevel() {
+
+            prvsButton.SetActive(true);
+            _levels[_currentLevel].SetActive(false);
+            GameDataModel.DesObjDictionary.Clear();
+            _currentLevel--;
+
+            for (int i = 0; i < _resetables.Count; i++)
+            {
+                _resetables[i].Revert();
+            }
+
+            _levels[_currentLevel].SetActive(true);
+            StartLevel();
+
     }
 
     private void AddToDictionary() {
@@ -131,6 +158,7 @@ public class _GameManager : MonoBehaviour {
                 GameDataModel.DesObjDictionary.Add(col, destScript);
             }
         }
+
     }
 
     

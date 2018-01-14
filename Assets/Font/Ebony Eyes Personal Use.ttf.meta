@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fc7e474f4b437dd48b2fd05290d990eb
+timeCreated: 1515957499
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ebony Eyes Personal Use
+  fontNames:
+  - Ebony Eyes Personal Use
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

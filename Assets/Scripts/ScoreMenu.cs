@@ -13,7 +13,12 @@ public class ScoreMenu : MonoBehaviour {
     public int _silverLevel;
     public int _goldLevel;
 
-    private string _grading;
+    public GameObject bronze;
+    public GameObject silver;
+    public GameObject gold;
+    public GameObject rubbish;
+
+
     private int _points;
 
 
@@ -31,13 +36,13 @@ public class ScoreMenu : MonoBehaviour {
         score.text = _points.ToString();
 
         if (_points < _bronzeLevel)
-            gradingText.text = "Ungradable :(!";
+            rubbish.SetActive(true);
         else if (_points < _silverLevel)
-            gradingText.text = "bronze!";
+            bronze.SetActive(true);
         else if (_points < _goldLevel)
-            gradingText.text = "Silver!";
+            silver.SetActive(true);
         else
-            gradingText.text = "Gold!";
+            gold.SetActive(true);
 
     }
 
