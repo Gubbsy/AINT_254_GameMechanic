@@ -12,6 +12,9 @@ public class _GameManager : MonoBehaviour {
     public GameObject scoreMenu;
     private ScoreMenu _scoreMenu;
 
+    public GameObject pauseMenu;
+    private bool isPaused;
+
     public GameObject nextButton;
     public GameObject prvsButton;
 
@@ -49,6 +52,39 @@ public class _GameManager : MonoBehaviour {
         HUD.SetActive(false);
         scoreMenu.SetActive(false);
         startMenu.SetActive(true);
+    }
+
+    void Update()
+    {
+        //Enable next button if not on the last level
+        if (_currentLevel == _levels.Length - 1)
+            nextButton.SetActive(false);
+        else
+            nextButton.SetActive(true);
+
+        //Enable previouse button if not on the first level
+        if (_currentLevel == 0)
+        {
+            prvsButton.SetActive(false);
+        }
+        else
+            prvsButton.SetActive(true);
+
+        //Enable pause menu apprpriatly. 
+        if (isPaused == true && !scoreMenu.activeSelf && !startMenu.activeSelf)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        //Toggle pause on esc key press 
+        if (Input.GetKeyDown(KeyCode.Escape))
+            TogglePause();
+          
     }
 
     public void StartLevel()
@@ -112,7 +148,7 @@ public class _GameManager : MonoBehaviour {
 
     public void NextLevel()
     {
-        {
+        
             _levels[_currentLevel].SetActive(false);
             GameDataModel.DesObjDictionary.Clear();
             _currentLevel++;
@@ -124,12 +160,11 @@ public class _GameManager : MonoBehaviour {
 
             _levels[_currentLevel].SetActive(true);
             StartLevel();
-        }
+        
     }
 
     public void PreviouseLevel() {
-
-            prvsButton.SetActive(true);
+                    
             _levels[_currentLevel].SetActive(false);
             GameDataModel.DesObjDictionary.Clear();
             _currentLevel--;
@@ -142,6 +177,11 @@ public class _GameManager : MonoBehaviour {
             _levels[_currentLevel].SetActive(true);
             StartLevel();
 
+    }
+
+
+    public void Quit() {
+        Application.Quit();
     }
 
     private void AddToDictionary() {
@@ -158,7 +198,13 @@ public class _GameManager : MonoBehaviour {
                 GameDataModel.DesObjDictionary.Add(col, destScript);
             }
         }
+    }
 
+    public void TogglePause() {
+        if (isPaused == true)
+            isPaused = false;
+        else
+            isPaused = true;
     }
 
     

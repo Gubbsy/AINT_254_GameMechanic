@@ -25,12 +25,13 @@ public class CameraRig : MonoBehaviour {
     {
         //Add thi camera rig to the list of possible camera rigs. 
         GameDataModel.CamRigList.Add(this);
+        _camStartPos = _camTrans.position;
     }
 
     
     void Start ()
     {
-        _camStartPos = _camTrans.position;
+        
     }
 
     public void StartCamPan()

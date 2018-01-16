@@ -44,6 +44,15 @@ public class ScoreMenu : MonoBehaviour {
         else
             gold.SetActive(true);
 
+        ClearScore();
+
+    }
+
+    public void ClearScore() {
+        bronze.SetActive(false);
+        silver.SetActive(false);
+        gold.SetActive(false);
+        rubbish.SetActive(false);
     }
 
 }
