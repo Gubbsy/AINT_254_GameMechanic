@@ -7,6 +7,9 @@ public class FireBreathing : MonoBehaviour {
     private GameObject _flames;
     private GameObject _damagedObj;
     private int _noFire;
+    private AudioSource _audio;
+
+    public AudioClip fire;
 
     [SerializeField]
     public float flameTime { set; get; }
@@ -16,6 +19,7 @@ public class FireBreathing : MonoBehaviour {
     //Find flame collider object and intialy diable it.
      void Start()
     {
+        _audio = gameObject.GetComponent<AudioSource>();
         _flames = GameObject.FindGameObjectWithTag("FlameCollider");
         _flames.SetActive(false);
     }
@@ -33,6 +37,8 @@ public class FireBreathing : MonoBehaviour {
 
             if (Input.GetKey(KeyCode.E) && !_flameOn && _noFire > 0)
             {
+                _audio.clip = fire;
+                _audio.Play();
                 _flameOn = true;
             }
 

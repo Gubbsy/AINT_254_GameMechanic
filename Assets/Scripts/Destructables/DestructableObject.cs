@@ -21,6 +21,8 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     [SerializeField]
     public bool isOnFire;
 
+    private Transform _trans;
+
     private AudioSource _breakingSound;
 
 
@@ -28,10 +30,11 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Get refernce for GameManager and Explosive Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
+        _trans = gameObject.GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
         _forceMode = ForceMode.Impulse;
         _explosive = gameObject.GetComponent<Explosive>();
-        _breakingSound = gameObject.GetComponent<AudioSource>();
+        _breakingSound = _trans.parent.GetComponent<AudioSource>();
     }
 
     //Take damage and add points to Game Manager
@@ -53,8 +56,8 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     // If tagged as being explosive, then detonate, and disable gameobject. 
     public void Die()
     {
+        _breakingSound.pitch = (Random.Range(0.6f, 0.9f));
         _breakingSound.Play();
-
         if (gameObject.tag == "explosiveObj")
         {
             _hasExploded = true;

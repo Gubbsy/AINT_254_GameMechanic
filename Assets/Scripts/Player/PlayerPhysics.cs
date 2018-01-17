@@ -23,12 +23,22 @@ public class PlayerPhysics : MonoBehaviour {
 
     private Vector3 _playerStartPos;
 
+    private AudioSource _audio;
+
+    public AudioClip lauchWoohs;
+    public AudioClip launchClick;
+    public AudioClip ImpactThud;
+
+    private bool _clickPlayed;
+
     [SerializeField]
     private _GameManager _GM;
 
 
     // Use this for initialization
     void Start() {
+        _clickPlayed = false;
+        _audio = gameObject.GetComponent<AudioSource>();
 
         //assign transfrom variable to gameobject transform value and store the players starting position 
         _transform = transform;
@@ -72,6 +82,13 @@ public class PlayerPhysics : MonoBehaviour {
                 //When the player clicks and drags, use the differencce between the player postion and the mouse position  on a 2D plane to calculate fire force and direction. 
                 if (Input.GetMouseButton(0))
                 {
+                    if (!_clickPlayed)
+                    {
+                        _audio.clip = launchClick;
+                        _audio.Play();
+                        _clickPlayed = true;
+                    }
+                    
                     //Get 3D character position as 2D screen plane value.
                     Vector3 characterPosition = Camera.main.WorldToScreenPoint(_transform.position);
                     characterPosition.z = 0;
@@ -90,6 +107,9 @@ public class PlayerPhysics : MonoBehaviour {
 
                 if (Input.GetMouseButtonUp(0))
                 {
+                    _clickPlayed = false;
+                    _audio.clip = lauchWoohs;
+                    _audio.Play();
                     //apply force to layer when moue is released using the calculated values.
                     _rigidbody.velocity = _direction * forceValue;
 
@@ -105,9 +125,12 @@ public class PlayerPhysics : MonoBehaviour {
                 }
             }
         }
-
         else
             return;
+
+        if (_audio.isPlaying == false) {
+            _audio.clip = ImpactThud;
+        }
 
     }
 
@@ -162,6 +185,8 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        _audio.clip = ImpactThud;
+        _audio.Play();
         //Tally collison - first collision is the player contacting the starting podium, 2nd collsion is the impact after firing. 
         collisions++;
 
