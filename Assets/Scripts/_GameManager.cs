@@ -22,6 +22,8 @@ public class _GameManager : MonoBehaviour {
 
     public GameObject startMenu;
 
+    public GameObject tutorialMenu;
+
 
     [SerializeField]
     private GameObject[] _levels;
@@ -52,6 +54,7 @@ public class _GameManager : MonoBehaviour {
         HUD.SetActive(false);
         scoreMenu.SetActive(false);
         startMenu.SetActive(true);
+        tutorialMenu.SetActive(false);
     }
 
     void Update()
@@ -102,7 +105,10 @@ public class _GameManager : MonoBehaviour {
         GameDataModel.Points = 0;
         Time.timeScale = 1.0f;
         scoreMenu.SetActive(false);
-        GameDataModel.GlideValue = 40;
+
+        GameDataModel.GlideValue = 50;
+
+        _scoreMenu.ClearScore();
     }
 
    
@@ -205,6 +211,16 @@ public class _GameManager : MonoBehaviour {
             isPaused = false;
         else
             isPaused = true;
+    }
+
+    public void OpenTutorial() {
+        tutorialMenu.SetActive(true);
+        startMenu.SetActive(false);
+    }
+
+    public void CloseTutorial() {
+        tutorialMenu.SetActive(false);
+        startMenu.SetActive(true);
     }
 
     

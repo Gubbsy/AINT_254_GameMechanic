@@ -43,9 +43,6 @@ public class ScoreMenu : MonoBehaviour {
             silver.SetActive(true);
         else
             gold.SetActive(true);
-
-        ClearScore();
-
     }
 
     public void ClearScore() {

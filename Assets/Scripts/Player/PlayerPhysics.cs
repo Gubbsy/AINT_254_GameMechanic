@@ -26,10 +26,6 @@ public class PlayerPhysics : MonoBehaviour {
     [SerializeField]
     private _GameManager _GM;
 
-    
-
-    
-
 
     // Use this for initialization
     void Start() {
@@ -86,7 +82,7 @@ public class PlayerPhysics : MonoBehaviour {
                     forceInY = (characterPosition.y - Input.mousePosition.y);
 
                     //calculate force value using pythagorus, devided appropriatly to give desired force. 
-                    forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 30;
+                    forceValue = Mathf.Sqrt(forceInX * forceInX + forceInY * forceInY) / 20;
                     //call aim preview.
                     Aim();
                 }

@@ -35,6 +35,7 @@ public class Resetable : MonoBehaviour
     Renderer _ren;
     FireBreathing _fireBreathing;
 
+
   
     private void Awake()
     {
