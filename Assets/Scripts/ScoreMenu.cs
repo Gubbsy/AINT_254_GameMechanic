@@ -9,9 +9,9 @@ public class ScoreMenu : MonoBehaviour {
     public Text score;
 
 
-    public int _bronzeLevel;
-    public int _silverLevel;
-    public int _goldLevel;
+    public  int _bronzeLevel;
+    public  int _silverLevel;
+    public  int _goldLevel;
 
     public GameObject bronze;
     public GameObject silver;

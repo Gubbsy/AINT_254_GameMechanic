@@ -8,7 +8,7 @@ public class Explosive : MonoBehaviour
 
     public float power = 10.0f;
     public float radius = 5.0f;
-    public float upForce = 1.0f;
+    public float upForce;
     public float damageRequired;
     
   

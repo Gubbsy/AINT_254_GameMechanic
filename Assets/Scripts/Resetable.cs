@@ -75,7 +75,7 @@ public class Resetable : MonoBehaviour
 
         if (_do != null)
         {
-            _do._objectHealth = _health;
+            _do.objectHealth = _health;
             _do.isOnFire = false;
             _do.SetHasExploded(false);
         }
@@ -118,7 +118,7 @@ public class Resetable : MonoBehaviour
 
         if (_do != null)
         {
-            _health = _do._objectHealth;
+            _health = _do.objectHealth;
  
         }
            

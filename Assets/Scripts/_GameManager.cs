@@ -111,7 +111,24 @@ public class _GameManager : MonoBehaviour {
         _scoreMenu.ClearScore();
     }
 
-   
+    private void AddToDictionary()
+    {
+
+        //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
+        // Destructable GameObject Script 
+        foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())
+        {
+            Collider col = gameObj.GetComponent<Collider>();
+            DestructableObject destScript = gameObj.GetComponent<DestructableObject>();
+
+            if (col != null && destScript != null)
+            {
+                GameDataModel.DesObjDictionary.Add(col, destScript);
+            }
+        }
+    }
+
+
     public void CheckForEnd()
     {
         Debug.Log("Check for end called");
@@ -128,6 +145,8 @@ public class _GameManager : MonoBehaviour {
         }
             Invoke("EndTurn", 2f);
     }
+
+
 
     //End turn
     public void EndTurn()
@@ -188,22 +207,6 @@ public class _GameManager : MonoBehaviour {
 
     public void Quit() {
         Application.Quit();
-    }
-
-    private void AddToDictionary() {
-
-        //Loop through all gameobjects in scene and add to desObjDictionary of it has a collider and 
-        // Destructable GameObject Script 
-        foreach (GameObject gameObj in Object.FindObjectsOfType<GameObject>())
-        {
-            Collider col = gameObj.GetComponent<Collider>();
-            DestructableObject destScript = gameObj.GetComponent<DestructableObject>();
-
-            if (col != null && destScript != null)
-            {
-                GameDataModel.DesObjDictionary.Add(col, destScript);
-            }
-        }
     }
 
     public void TogglePause() {

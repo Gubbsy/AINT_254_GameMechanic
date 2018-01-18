@@ -6,10 +6,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
 
     [SerializeField]
-    public int _objectHealth;
+    public int objectHealth;
 
     [SerializeField]
-    private int _pointsMuliplier; 
+    public int pointsMuliplier; 
 
     private int _pointsGiven;
     private Rigidbody _rb;
@@ -26,7 +26,10 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     private AudioSource _breakingSound;
 
     private GameObject _PSObject;
-    public GameObject woodExplosion;
+    private GameObject _woodExplosion;
+
+    private GameObject _fireEffect;
+    private GameObject _fireObject;
 
 
 
@@ -34,25 +37,26 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     void Start()
     {
         _PSObject = GameObject.FindGameObjectWithTag("emptyExplosions");
+        _fireEffect = _PSObject.transform.GetChild(1).gameObject;
 
         _trans = gameObject.GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
         _forceMode = ForceMode.Impulse;
         _explosive = gameObject.GetComponent<Explosive>();
         _breakingSound = _trans.parent.GetComponent<AudioSource>();
-        woodExplosion = _PSObject.transform.GetChild(0).gameObject;
+        _woodExplosion = _PSObject.transform.GetChild(0).gameObject;
     }
 
     //Take damage and add points to Game Manager
-    public void TakeDamage(int damageTaken)
+    public void TakeDamage(int damageTaken, int pointsGiven)
     {
         //Calculate points to add and add them 
-        _objectHealth -= damageTaken;
-        _pointsGiven = damageTaken;       
-        GameDataModel.Points += (_pointsGiven * _pointsMuliplier); 
+        objectHealth -= damageTaken;
+        _pointsGiven = pointsGiven;       
+        GameDataModel.Points += (_pointsGiven * pointsMuliplier); 
 
         // if health is below zero then die
-        if (_objectHealth < 0)
+        if (objectHealth < 0)
         {
             Die();
         }
@@ -62,8 +66,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     // If tagged as being explosive, then detonate, and disable gameobject. 
     public void Die()
     {
-       
-
         _breakingSound.pitch = (Random.Range(0.6f, 0.9f));
         _breakingSound.Play();
         if (gameObject.tag == "explosiveObj")
@@ -73,11 +75,9 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
         }
         else {
-            Instantiate(woodExplosion, transform.position, transform.rotation, _PSObject.transform);
+            Instantiate(_woodExplosion, transform.position, transform.rotation, _PSObject.transform);
             gameObject.SetActive(false);
         }
-            
-
     }
 
     //Each destructable object handles there own force and damage respectivley. 
@@ -85,13 +85,15 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
        
         _rb.AddExplosionForce(power, explosionPosition, radius, upForce, _forceMode);
-        TakeDamage((int) (power * effect));
+        int temp = (int)(power * 0.2f * effect);
+        TakeDamage(temp,temp);
     }
     
     //When object takes fire damage start the fire damage Coroutine set isOnFire to true, and change the material colour to black. 
     public void TakeFireDamage()
     {
         StartCoroutine(FireDamage());
+        _fireObject = Instantiate(_fireEffect, _trans);
         Renderer rend = GetComponent<Renderer>();
         rend.material.color = Color.black;
         isOnFire = true;
@@ -105,9 +107,14 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //On collision with another object take damage relative to the contact velocity. 
     public void  OnCollisionEnter(Collision other)
     {
-            float contactVelocity;
-            contactVelocity = _rb.velocity.magnitude;
-            TakeDamage((int)contactVelocity);
+        float contactVelocity;
+        contactVelocity = _rb.velocity.magnitude;
+
+        if (other.gameObject.tag == "Floor")
+            TakeDamage((int)(contactVelocity * contactVelocity),(int)contactVelocity);
+        else
+            TakeDamage((int)(contactVelocity), (int)contactVelocity);
+
     }
 
     //Fire damage Coroutine where the player takes fire dmaage every 0.5 seconds for 10 seconds. 
@@ -115,11 +122,12 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
         for (int i = 0; i < 20; i++)
         {
-            TakeDamage(2);
+            TakeDamage(2,2);
             yield return new WaitForSeconds(0.5f);
         }
 
         isOnFire = false;
+        Destroy(_fireObject);
     }
 
     public bool GetHasExploded()
