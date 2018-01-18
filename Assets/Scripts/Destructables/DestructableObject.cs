@@ -37,7 +37,6 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     void Start()
     {
         _PSObject = GameObject.FindGameObjectWithTag("emptyExplosions");
-        _fireEffect = GameObject.FindGameObjectWithTag("FirePFX").gameObject;
 
         _trans = gameObject.GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
@@ -45,6 +44,9 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _explosive = gameObject.GetComponent<Explosive>();
         _breakingSound = _trans.parent.GetComponent<AudioSource>();
         _woodExplosion = _PSObject.transform.GetChild(0).gameObject;
+
+        _fireEffect = _fireObject;
+        _fireObject = null;
     }
 
     //Take damage and add points to Game Manager

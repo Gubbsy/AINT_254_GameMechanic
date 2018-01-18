@@ -267,11 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &11218254
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -419,10 +418,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &23274978
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -522,10 +521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &27709673
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -652,10 +651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &39538703
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -936,10 +935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &45521726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1110,10 +1109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &45741090
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1304,11 +1303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &54854280
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1835,10 +1833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &57786478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2008,10 +2006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 10
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &75673238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2165,11 +2163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &76531416
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2256,10 +2253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &78237051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2411,11 +2408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &94675677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2951,10 +2947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &105312300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3206,10 +3202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &107407562
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3347,10 +3343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &112269025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3520,10 +3516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 6
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &120851258
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3677,10 +3673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &122597343
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4016,10 +4012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &147510363
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4236,11 +4232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &162331077
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4394,10 +4389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &196886216
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4535,10 +4530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &197669633
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4627,7 +4622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &209702997
 Transform:
   m_ObjectHideFlags: 0
@@ -5037,10 +5032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &217885357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5233,10 +5228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &224363037
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5918,10 +5913,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &269542745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6203,10 +6198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &304538941
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6413,10 +6408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &306291139
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6537,11 +6532,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &309588708
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6678,10 +6672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &330764206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6903,10 +6897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &349949056
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7097,10 +7091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &357411376
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7307,10 +7301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &363919905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7448,10 +7442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &368297930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7510,6 +7504,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368297925}
   m_Mesh: {fileID: 4300000, guid: 2797a1e5240980a41a5c432cb694063d, type: 3}
+--- !u!1 &373616634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 373616635}
+  - component: {fileID: 373616636}
+  m_Layer: 0
+  m_Name: FirePFX
+  m_TagString: FirePFX
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373616635
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 373616634}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 256.22, y: 38.95668, z: -32.001907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 916852783}
+  m_Father: {fileID: 397747302}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373616636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 373616634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6387d6a201730f4980e11d5572cc54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375493138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7590,10 +7625,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &375493143
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7730,10 +7765,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &376140226
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7816,6 +7851,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1720640939}
+  - {fileID: 373616635}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7899,10 +7935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &401647871
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8154,10 +8190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 3
-  _pointsMuliplier: 0
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!114 &407944885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8268,11 +8304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &408838430
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8411,10 +8446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &409531647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8553,11 +8588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &409996560
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8694,10 +8728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &411857997
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8820,10 +8854,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &417283985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9271,11 +9305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &445394162
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9414,11 +9447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &453091273
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9574,10 +9606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 6
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &457345392
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9817,11 +9849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 3
-  _pointsMuliplier: 0
+  objectHealth: 0
+  pointsMuliplier: 0
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!4 &476186578 stripped
 Transform:
   m_PrefabParentObject: {fileID: 441240, guid: c544c58272b03294ebe7a1babe149792, type: 2}
@@ -9984,11 +10015,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &477152778
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10332,11 +10362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &488238188
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10773,11 +10802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &497424909
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11028,10 +11056,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &520092542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11327,11 +11355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &528370719
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11470,11 +11497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &536010289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11681,11 +11707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &568572885
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11808,10 +11833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &568754387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12026,11 +12051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &577497532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12246,6 +12270,90 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1823597, y: 3.4015274, z: 8.435904}
   m_Center: {x: 0, y: 1.73, z: 0}
+--- !u!1001 &579827809
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 373616635}
+    m_Modifications:
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1897349737
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[2].value
+      value: 0.42514992
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].value
+      value: 0.07317274
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].time
+      value: 0.83317393
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0.3465401
+      objectReference: {fileID: 0}
+    - target: {fileID: 198435143619932000, guid: 63054c76e2c18384590f8f31f765021c,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0.3465401
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 63054c76e2c18384590f8f31f765021c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &585243036
 GameObject:
   m_ObjectHideFlags: 0
@@ -12310,10 +12418,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &585243040
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12509,10 +12617,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &596567511
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13027,11 +13135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &603183934
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13170,10 +13277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &609369881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13296,10 +13403,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &612411092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13491,10 +13598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &616508657
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13808,11 +13915,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &625978848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14129,11 +14235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &633953423
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14272,10 +14377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &639177172
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14429,10 +14534,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 4
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!114 &656786832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14527,10 +14632,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &656836353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14945,11 +15050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &679448131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15087,10 +15191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &683065202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15244,10 +15348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &706777781
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15555,10 +15659,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &713983119
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15712,10 +15816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &714535447
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15887,10 +15991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &733567475
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16029,10 +16133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &735514038
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16317,11 +16421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &741005952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16444,10 +16547,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &741258873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16765,10 +16868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &750953824
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17070,10 +17173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &769170312
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17210,10 +17313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &776375241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17350,10 +17453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &777583138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17490,10 +17593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &779405235
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17648,11 +17751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &788720619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17790,10 +17892,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &792882629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18021,11 +18123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &796981302
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18162,10 +18263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &799901894
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21655,10 +21756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &815027252
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21779,10 +21880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &826251315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22213,10 +22314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 4
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!114 &838882496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22692,10 +22793,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &876411267
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23088,11 +23189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &882774363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23344,11 +23444,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &890797033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23502,10 +23601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &895233039
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23689,10 +23788,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &901480208
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23815,10 +23914,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &914830502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23958,6 +24057,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83a0c52366d043948b7b8baee40e87b9, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &916852783 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4870383238051778, guid: 63054c76e2c18384590f8f31f765021c,
+    type: 2}
+  m_PrefabInternal: {fileID: 579827809}
 --- !u!1 &920369894
 GameObject:
   m_ObjectHideFlags: 0
@@ -24038,10 +24142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &920369899
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24404,11 +24508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &935354374
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24615,10 +24718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &948218570
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24764,10 +24867,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 3
-  _pointsMuliplier: 0
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!114 &954344125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24862,10 +24965,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &955418906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25047,11 +25150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 3
-  _pointsMuliplier: 0
+  objectHealth: 0
+  pointsMuliplier: 0
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &980818566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25135,10 +25237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &983645094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25292,10 +25394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &986913477
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25603,11 +25705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &995068233
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25744,11 +25845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1004922979
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25887,10 +25987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1010831738
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26011,10 +26111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1013442074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26186,10 +26286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1019601081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26342,11 +26442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1030208774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26675,10 +26774,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1058280701
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26832,10 +26931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1068842307
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26956,10 +27055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1070064351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27113,10 +27212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1074497302
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27255,10 +27354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1075510829
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27458,11 +27557,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1099724541
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27599,10 +27697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1100191793
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27739,10 +27837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1107206106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27941,11 +28039,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1144956584
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28198,10 +28295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1148589325
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28324,10 +28421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1160078203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28481,10 +28578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1175226033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28800,11 +28897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1182495059
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28941,10 +29037,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1184479382
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29065,10 +29161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1185630917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29353,10 +29449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1198526062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29494,10 +29590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1199866423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29650,11 +29746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1200325240
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29937,10 +30032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1207686031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30094,10 +30189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1210804920
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30234,10 +30329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1215019798
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30376,10 +30471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1215715952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30535,10 +30630,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1218079253
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30882,10 +30977,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1225614308
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31023,10 +31118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1231492938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31180,10 +31275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1237895357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31306,10 +31401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1241285290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31531,10 +31626,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1243593216
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31690,10 +31785,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1249226714
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31801,10 +31896,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 1
-  _pointsMuliplier: 0
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1250625797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31884,10 +31979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1250637071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32025,10 +32120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1257548254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32181,11 +32276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1263937753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32809,10 +32903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1280539785
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33034,10 +33128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1288195724
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33174,10 +33268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1293534774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33316,10 +33410,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1296765377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33458,10 +33552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1298675407
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33666,10 +33760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1314997433
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33790,10 +33884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1315129493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33931,10 +34025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1331341135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34303,11 +34397,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1335427437
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34525,6 +34618,176 @@ Prefab:
       value: 
       objectReference: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
         type: 2}
+    - target: {fileID: 114941397907044998, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114988589456032460, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114971937655482988, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114896210592154174, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114000444329433192, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114003400540429798, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114803392409561720, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114573888785613252, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114462506642163116, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114932100574553620, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114405862680998806, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114547113671795654, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114531494968304768, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114360101284814794, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114708013784410100, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114568385823241392, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114315763354612850, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: _fireObject
+      value: 
+      objectReference: {fileID: 373616634}
+    - target: {fileID: 114573888785613252, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114003400540429798, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932100574553620, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114568385823241392, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315763354612850, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114971937655482988, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114941397907044998, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114405862680998806, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708013784410100, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000444329433192, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896210592154174, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114988589456032460, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114547113671795654, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114803392409561720, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462506642163116, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531494968304768, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114360101284814794, guid: 187270ca2fe18a94cab577d45457fcef,
+        type: 2}
+      propertyPath: objectHealth
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 187270ca2fe18a94cab577d45457fcef, type: 2}
   m_IsPrefabParent: 0
@@ -34608,10 +34871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1339079137
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34893,10 +35156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1347439901
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35033,10 +35296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1358028155
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35175,10 +35438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1362402299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35584,10 +35847,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1376382872
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35710,10 +35973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1377111903
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35867,10 +36130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1377825757
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36009,10 +36272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1379606887
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36114,10 +36377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 4
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!4 &1381653015 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400590, guid: 83a0c52366d043948b7b8baee40e87b9, type: 2}
@@ -39750,10 +40013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1431882840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39842,7 +40105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1432076720
 Transform:
   m_ObjectHideFlags: 0
@@ -39926,10 +40189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1438782468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40066,10 +40329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1444565369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40207,10 +40470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1447593996
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40348,11 +40611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1453542740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40506,10 +40768,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1455549475
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40663,10 +40925,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1461274331
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40882,10 +41144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1477573790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41039,10 +41301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1478643529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41241,11 +41503,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1488087940
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41382,10 +41643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1505417457
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41670,10 +41931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1515784629
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41794,10 +42055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1516427240
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42050,10 +42311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1521828723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42617,11 +42878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1540747482
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46177,10 +46437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1559118248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46353,10 +46613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1569360499
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46493,10 +46753,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1577422277
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46633,10 +46893,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1585079808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46790,11 +47050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1590701605
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46931,10 +47190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1590941594
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47057,10 +47316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1593113131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47496,10 +47755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1605778242
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47637,10 +47896,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1619346845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47934,10 +48193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1631976433
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48075,11 +48334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1635940322
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48218,10 +48476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1647232094
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48647,10 +48905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1666818120
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48873,11 +49131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1672566723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49090,10 +49347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!114 &1695832902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49508,11 +49765,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1741104495
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50063,10 +50319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1780543249
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50205,10 +50461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1782456733
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50443,10 +50699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1787638017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50599,10 +50855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1794185656
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50770,8 +51026,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1808425438}
-  m_LocalRotation: {x: -0.34932232, y: 0.17915997, z: 0.068235755, w: 0.91718024}
-  m_LocalPosition: {x: 7.5812683, y: -435.6014, z: -167.88553}
+  m_LocalRotation: {x: -0.1477462, y: 0.26358068, z: 0.04088992, w: 0.9523782}
+  m_LocalPosition: {x: -87.3111, y: -435.56387, z: -190.7596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622580936}
@@ -50969,10 +51225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1831504523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51095,10 +51351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1833617381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51468,10 +51724,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 6
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1846393584
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51625,11 +51881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1854910215
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51914,10 +52169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1873579232
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52132,11 +52387,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1882169403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52273,11 +52527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1883012728
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52559,10 +52812,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1895433607
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52718,10 +52971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 6
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1902399959
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52840,10 +53093,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 4
-  _pointsMuliplier: 2
+  objectHealth: 3
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!4 &1909271859 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400590, guid: 83a0c52366d043948b7b8baee40e87b9, type: 2}
@@ -53137,10 +53390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1931112721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53293,10 +53546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1941563045
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53435,10 +53688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1944111717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53577,10 +53830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1945854730
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53717,10 +53970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1948690433
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53841,10 +54094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1951786479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53981,10 +54234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1952687135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54137,10 +54390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1953377297
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54279,10 +54532,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1968962938
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54421,10 +54674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &1980406228
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54547,11 +54800,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1982959419
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54722,10 +54974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &1985966668
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -54814,11 +55066,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 1
-  _pointsMuliplier: 0
+  objectHealth: 0
+  pointsMuliplier: 0
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1990453640
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54917,10 +55168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &1999736871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55119,10 +55370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &2015135815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55276,10 +55527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2019528127
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55422,10 +55673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2031684309
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55598,11 +55849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2041550319
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55723,10 +55973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &2044887357
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56072,10 +56322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2076367799
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56198,10 +56448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 2
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &2076600212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56355,10 +56605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2081572792
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56497,11 +56747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 2
-  _pointsMuliplier: 1
+  objectHealth: 2
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 1856899710829074, guid: 6d41c804d2a52564cb6e983974a2f993,
-    type: 2}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2106326529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56655,10 +56904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 5
-  _pointsMuliplier: 1
+  objectHealth: 7
+  pointsMuliplier: 4
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!136 &2107481248
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57040,10 +57289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 20
-  _pointsMuliplier: 0
+  objectHealth: 4
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!54 &2128973208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57311,10 +57560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff28d86b0b29e064d8d89c87e03b3778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectHealth: 15
-  _pointsMuliplier: 1
+  objectHealth: 5
+  pointsMuliplier: 1
   isOnFire: 0
-  woodExplosion: {fileID: 0}
+  _fireObject: {fileID: 373616634}
 --- !u!64 &2138472507
 MeshCollider:
   m_ObjectHideFlags: 0

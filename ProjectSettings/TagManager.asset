@@ -9,6 +9,8 @@ TagManager:
   - FlameCollider
   - explosiveObj
   - Floor
+  - Fire
+  - FirePFX
   layers:
   - Default
   - TransparentFX
