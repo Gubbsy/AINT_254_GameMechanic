@@ -23,7 +23,8 @@ public class KinematicTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         float velocity;
-
+       
+        //try incase the colliding object doesn't have a rigidbody component 
         try
         {
              velocity = other.GetComponent<Rigidbody>().velocity.magnitude;

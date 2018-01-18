@@ -67,7 +67,7 @@ public class FireBreathing : MonoBehaviour {
     // take fire damage.
     private void OnTriggerEnter(Collider other)
     {
-        if (GameDataModel.DesObjDictionary.ContainsKey(other))
+        if (GameDataModel.DesObjDictionary.ContainsKey(other) && _flameOn)
         {
             GameDataModel.DesObjDictionary[other].TakeFireDamage();
         }

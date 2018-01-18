@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4471028148208150}
+  - component: {fileID: 114689095404874606}
   m_Layer: 0
   m_Name: Wood Explosion
   m_TagString: Untagged
@@ -101,6 +102,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114689095404874606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635516972702628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6387d6a201730f4980e11d5572cc54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198384361648087118
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -208,8 +220,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.1
+      scalar: 1.5
+      minScalar: 0.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -312,8 +324,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.7
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -720,7 +732,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1711,7 +1723,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3393,7 +3405,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844656751655240}
   serializedVersion: 5
-  lengthInSec: 0.2
+  lengthInSec: 0.3
   simulationSpeed: 1
   looping: 0
   prewarm: 0
@@ -3493,8 +3505,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.1
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3597,8 +3609,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.2
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3888,7 +3900,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 10
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -3910,7 +3922,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 1.94
       mode: 0
       spread: 0
       speed:
@@ -4005,7 +4017,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4996,7 +5008,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5117,7 +5129,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 0.6
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -5126,7 +5138,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
