@@ -156,6 +156,13 @@ public class PlayerPhysics : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (!_canFire)
+        {
+            for (int i = 0; i < _dotLine.Length; i++)
+            {
+                _dotLine[i].SetActive(false);
+            }
+        }
         //If in playmode apply forces from gliding. 
         if (GameDataModel.PlayMode == true)
         {
@@ -164,7 +171,6 @@ public class PlayerPhysics : MonoBehaviour {
         }
         else
             return;
-
     }
 
     private void Glide()
