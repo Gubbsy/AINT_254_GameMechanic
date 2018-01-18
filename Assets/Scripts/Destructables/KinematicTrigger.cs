@@ -35,11 +35,11 @@ public class KinematicTrigger : MonoBehaviour {
 
         if ( velocity > _minVelocity)
         {
-            disableKinematic();
+            DisableKinematic();
         }
     }
 
-    public void disableKinematic()
+    public void DisableKinematic()
     {
         int children = transform.childCount;
         for (int i = 0; i < children; i++)

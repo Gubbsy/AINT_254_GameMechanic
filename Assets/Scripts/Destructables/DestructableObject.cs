@@ -40,6 +40,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         _forceMode = ForceMode.Impulse;
         _explosive = gameObject.GetComponent<Explosive>();
         _breakingSound = _trans.parent.GetComponent<AudioSource>();
+        woodExplosion = _PSObject.transform.GetChild(0).gameObject;
     }
 
     //Take damage and add points to Game Manager
@@ -72,7 +73,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
         }
         else {
-            Instantiate(woodExplosion, transform.position, transform.rotation);
+            Instantiate(woodExplosion, transform.position, transform.rotation, _PSObject.transform);
             gameObject.SetActive(false);
         }
             
