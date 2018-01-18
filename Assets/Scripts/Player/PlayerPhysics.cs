@@ -154,6 +154,14 @@ public class PlayerPhysics : MonoBehaviour {
         }
     }
 
+    public void ResetAimBalls()
+    {
+        for (int i = 0; i < _dotLine.Length; i++)
+        {
+            _dotLine[i].SetActive(false);
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!_canFire)
