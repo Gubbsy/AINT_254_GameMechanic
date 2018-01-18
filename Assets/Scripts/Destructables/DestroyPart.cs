@@ -12,11 +12,11 @@ public class DestroyPart : MonoBehaviour {
             _objectNum = 1;
         else _objectNum++;
 
-        if (_objectNum > 1)
-            Invoke("DestroyParticles", 10f);
+        if (_objectNum > 2)
+            Invoke("DestroyParticles", 5f);
 	}
 	
-	void DestroyParticles()
+	public void DestroyParticles()
     {
         Destroy(gameObject);
     }

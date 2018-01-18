@@ -95,10 +95,16 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public void TakeFireDamage()
     {
         StartCoroutine(FireDamage());
-        _fireObject = Instantiate(_fireEffect, _trans.position, _trans.rotation, _PSObject.transform);
+        _fireObject = Instantiate(_fireEffect, _trans.position, _trans.rotation, _trans);
         Renderer rend = GetComponent<Renderer>();
         rend.material.color = Color.black;
         isOnFire = true;
+    }
+
+    public void ResetFire()
+    {
+        if (_fireObject != null)
+            _fireObject.GetComponent<DestroyPart>().DestroyParticles();
     }
 
     //Diable is kinematic on object.
@@ -122,7 +128,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     //Fire damage Coroutine where the player takes fire dmaage every 0.5 seconds for 10 seconds. 
     public IEnumerator FireDamage()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 10; i++)
         {
             TakeDamage(1,2);
             yield return new WaitForSeconds(0.5f);

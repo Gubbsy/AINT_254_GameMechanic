@@ -77,6 +77,7 @@ public class Resetable : MonoBehaviour
         {
             _do.objectHealth = _health;
             _do.isOnFire = false;
+            _do.ResetFire();
             _do.SetHasExploded(false);
         }
             
@@ -86,6 +87,7 @@ public class Resetable : MonoBehaviour
         if (_playerPhysics != null)
         {
             _playerPhysics.collisions = 0;
+            _playerPhysics.ResetAimBalls();
         }
 
         if (_fireBreathing != null) {
