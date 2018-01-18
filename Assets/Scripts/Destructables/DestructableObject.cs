@@ -25,11 +25,16 @@ public class DestructableObject : MonoBehaviour, IDestructable {
 
     private AudioSource _breakingSound;
 
+    private GameObject _PSObject;
+    public GameObject woodExplosion;
+
 
 
     //Get refernce for GameManager and Explosive Script and assign rigidbody and forceMode (for explosion)
     void Start()
     {
+        _PSObject = GameObject.FindGameObjectWithTag("emptyExplosions");
+
         _trans = gameObject.GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
         _forceMode = ForceMode.Impulse;
@@ -56,16 +61,21 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     // If tagged as being explosive, then detonate, and disable gameobject. 
     public void Die()
     {
+       
+
         _breakingSound.pitch = (Random.Range(0.6f, 0.9f));
         _breakingSound.Play();
         if (gameObject.tag == "explosiveObj")
         {
             _hasExploded = true;
             _explosive.Detonate();
-            
+
         }
-        else
+        else {
+            Instantiate(woodExplosion, transform.position, transform.rotation);
             gameObject.SetActive(false);
+        }
+            
 
     }
 
