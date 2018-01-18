@@ -29,7 +29,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     private GameObject _woodExplosion;
 
     private GameObject _fireEffect;
-    private GameObject _fireObject;
+    public GameObject _fireObject;
 
 
 
@@ -37,7 +37,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     void Start()
     {
         _PSObject = GameObject.FindGameObjectWithTag("emptyExplosions");
-        _fireEffect = _PSObject.transform.GetChild(1).gameObject;
+        _fireEffect = GameObject.FindGameObjectWithTag("FirePFX").gameObject;
 
         _trans = gameObject.GetComponent<Transform>();
         _rb = GetComponent<Rigidbody>();
@@ -58,6 +58,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         // if health is below zero then die
         if (objectHealth < 0)
         {
+            StopAllCoroutines();
             Die();
         }
 
@@ -68,6 +69,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
         _breakingSound.pitch = (Random.Range(0.6f, 0.9f));
         _breakingSound.Play();
+        Destroy(_fireObject);
         if (gameObject.tag == "explosiveObj")
         {
             _hasExploded = true;
@@ -93,7 +95,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     public void TakeFireDamage()
     {
         StartCoroutine(FireDamage());
-        _fireObject = Instantiate(_fireEffect, _trans);
+        _fireObject = Instantiate(_fireEffect, _trans.position, _trans.rotation, _PSObject.transform);
         Renderer rend = GetComponent<Renderer>();
         rend.material.color = Color.black;
         isOnFire = true;
@@ -122,7 +124,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
     {
         for (int i = 0; i < 20; i++)
         {
-            TakeDamage(2,2);
+            TakeDamage(1,2);
             yield return new WaitForSeconds(0.5f);
         }
 

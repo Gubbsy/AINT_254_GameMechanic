@@ -13,7 +13,7 @@ public class DestroyPart : MonoBehaviour {
         else _objectNum++;
 
         if (_objectNum > 1)
-            Invoke("DestroyParticles", 4f);
+            Invoke("DestroyParticles", 10f);
 	}
 	
 	void DestroyParticles()
