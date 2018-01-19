@@ -48,7 +48,7 @@ public class _GameManager : MonoBehaviour {
         return singleton;
     }
 
-
+    //Intialise all menues on start 
 	void Start () {
         _scoreMenu = scoreMenu.GetComponent<ScoreMenu>();
         HUD.SetActive(false);
@@ -90,6 +90,7 @@ public class _GameManager : MonoBehaviour {
           
     }
 
+    //Intialise all properties to starting values for level
     public void StartLevel()
     {
         HUD.SetActive(true);
@@ -128,7 +129,7 @@ public class _GameManager : MonoBehaviour {
         }
     }
 
-
+    //Repetitivley call all objects in the dictionary's method to check if it is still moving.
     public void CheckForEnd()
     {
         Debug.Log("Check for end called");
@@ -171,6 +172,7 @@ public class _GameManager : MonoBehaviour {
         StartLevel();
     }
 
+    //Iterate to the next level, reseting all items to starting point
     public void NextLevel()
     {
         
@@ -188,6 +190,7 @@ public class _GameManager : MonoBehaviour {
         
     }
 
+    //Iterate to the previouse level, reseting all items to starting point
     public void PreviouseLevel() {
                     
             _levels[_currentLevel].SetActive(false);
@@ -204,7 +207,7 @@ public class _GameManager : MonoBehaviour {
 
     }
 
-
+    //Quit
     public void Quit() {
         Application.Quit();
     }
@@ -216,11 +219,12 @@ public class _GameManager : MonoBehaviour {
             isPaused = true;
     }
 
+    //Open tutorial Menu
     public void OpenTutorial() {
         tutorialMenu.SetActive(true);
         startMenu.SetActive(false);
     }
-
+    //Close tutorial Menu
     public void CloseTutorial() {
         tutorialMenu.SetActive(false);
         startMenu.SetActive(true);

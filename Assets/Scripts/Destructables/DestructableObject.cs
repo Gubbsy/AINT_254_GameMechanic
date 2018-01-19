@@ -103,6 +103,7 @@ public class DestructableObject : MonoBehaviour, IDestructable {
         isOnFire = true;
     }
 
+    //Reset Fire particles to off
     public void ResetFire()
     {
         if (_fireObject != null)
